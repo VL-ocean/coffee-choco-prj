@@ -1,4 +1,4 @@
-# Coffee & Chocolate Blog [(*Live site*)](https://wild-atlantic-way-c6d960b228a8.herokuapp.com/)
+# Coffee & Chocolate Blog [(*Live site*)]()
 
 
 ## Introduction 
@@ -79,11 +79,58 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
 
 ### Wireframe
 
+<details>
+<summary>Home</summary>
+<img src="./README-images/home.png">
+</details>
+
+<details>
+<summary>Blog</summary>
+<img src="./README-images/blog.png">
+</details>
+
+<details>
+<summary>Post view</summary>
+<img src="./README-images/post-view.png">
+</details>
+
+<details>
+<summary>Recipes</summary>
+<img src="./README-images/recipes.png">
+</details>
+
+<details>
+<summary>Recipe view</summary>
+<img src="./README-images/recipe-view.png">
+</details>
+
+<details>
+<summary>Sign Up</summary>
+<img src="./README-images/signup.png">
+</details>
+
+<details>
+<summary>Login</summary>
+<img src="./README-images/login.png">
+</details>
+
+<details>
+<summary>Profile</summary>
+<img src="./README-images/profile.png">
+</details>
+
+<details>
+<summary>Logout</summary>
+<img src="./README-images/logout.png">
+</details>
+
+
+
 ### Structure & Logical Flow
 
 The database model diagram was designed using Lucidchart
 
-![Screenshot of flowchart](./README-images/)
+![Screenshot of flowchart](./README-images/database-erd.jpeg)
 
 ### Colour Scheme
 
@@ -175,6 +222,8 @@ Testing includes the following:
 
 
 ## Credits
+
+
 
 
 ## Acknowledgements
