@@ -130,7 +130,7 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
 
 The database model diagram was designed using Lucidchart
 
-![Screenshot of flowchart](./README-images/database-erd.jpeg)
+![Screenshot of flowchart](./README-images/database-erd.png)
 
 ### Colour Scheme
 
