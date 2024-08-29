@@ -32,7 +32,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     "8000-vlocean-coffeechocoprj-7p4q8sqje4d.ws.codeinstitute-ide.net",
-    "https://coffee-choco-blog-7ff7b0b383df.herokuapp.com/",
+    ".herokuapp.com",
 ]
 
 # Application definition
