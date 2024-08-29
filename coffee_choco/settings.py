@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "slz!jy1b$n+!a6*pnimnlik-@jfqn@1^pqis=@*-!((-oz$kl&"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "8000-vlocean-coffeechocoprj-7p4q8sqje4d.ws.codeinstitute-ide.net",
-    ".herokuapp.com",
+    '.herokuapp.com'
 ]
 
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "blog",
 ]
 
 MIDDLEWARE = [
