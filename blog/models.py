@@ -30,3 +30,20 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.User_ID}"
+
+
+class Comment(models.Model):
+    Post_ID = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
+    User_ID = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["created_at"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.User_ID}"
