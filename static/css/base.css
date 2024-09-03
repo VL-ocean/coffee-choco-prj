@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 
 main {
     flex: 1 0 auto;
-    background-color: #f2c6ac;
+    background-color: #f2d9cb;
 }
 
 /* Footer */
@@ -68,4 +68,19 @@ a.nav-link {
 
 img.logo {
     width: 100%;
+}
+
+.active {
+    border-bottom: 2px solid #5f4e2a;
+    font-weight: 500;
+}
+
+/* Form */
+
+.form {
+    width: 75%;
+    margin: 3% auto;
+    box-shadow: var(--small-box-shadow);
+    border-radius: 5px;
+    background-color: #00000040;
 }
