@@ -174,7 +174,7 @@ The database model diagram was designed using Lucidchart
 **Gunicorn**
 * Python HTTP server for WSGI applications.
 
-**Summernote**
+**Django Rich Text Field**
 * WYSIWYG editor. Used for comment form.
 
 **Cloudinary**

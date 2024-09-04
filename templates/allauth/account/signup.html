@@ -1,5 +1,5 @@
 {% extends "account/base.html" %}
-
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% load i18n %}
@@ -11,9 +11,12 @@
 <div class="container text-center mt-3">
   <h1>{% trans "Sign Up" %}</h1>
 
-  <p>{% blocktrans %}Already have an account? Then please <a class="link-dark link-underline-primary link-offset-2 link-underline-opacity-75 link-underline-opacity-100-hover" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+  <p>{% blocktrans %}Already have an account? Then please <a
+      class="link-dark link-underline-primary link-offset-2 link-underline-opacity-75 link-underline-opacity-100-hover"
+      href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
-  <form class="form p-2 text-start d-flex flex-column pb-3" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  <form class="form p-2 text-start d-flex flex-column pb-3" id="signup_form" method="post"
+    action="{% url 'account_signup' %}">
     {% csrf_token %}
     {{ form|crispy }}
     {% if redirect_field_value %}

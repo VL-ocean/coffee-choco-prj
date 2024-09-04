@@ -4,8 +4,8 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand mb-2" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="Coffee & Chocolate Logo"
-                    class="logo"></a>
+            <a class="navbar-brand mb-2" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}"
+                    alt="Coffee & Chocolate Logo" class="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -18,14 +18,17 @@
                             href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link {% if request.path == blog_url %}active{% endif %}"
+                            href="{% url 'blog' %}">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">New</a>
+                        <a class="nav-link {% if request.path == addpost_url %}active{% endif %}"
+                            href="{% url 'add_post' %}">New Post</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -33,7 +36,8 @@
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -42,7 +46,6 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-dark" type="submit">Search</button>
                 </form>
-
             </div>
         </div>
     </nav>
