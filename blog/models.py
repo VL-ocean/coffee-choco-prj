@@ -1,6 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from djrichtextfield.models import RichTextField
+from django_resized import ResizedImageField
+
+
+# Choice Fields
+STATUS = ((0, "Draft"), (1, "Published"))
+CATEGORY = ((0, "Coffee"), (1, "Chocolate"))
+TYPE = ((0, "Article"), (1, "Recipe"))
+
 
 class Post(models.Model):
     """
@@ -12,14 +21,18 @@ class Post(models.Model):
     title = models.CharField(max_length=300, unique=True, null=False, blank=False)
     slug = models.SlugField(max_length=300, unique=True)
     description = models.CharField(max_length=500, null=False, blank=False)
-    content = models.TextField()
+    content = RichTextField(max_length=30000, null=False, blank=False)
+    image = ResizedImageField(
+        size=[400, None], quality=75, upload_to='posts/', force_format='WEBP',
+        blank=False, null=False
+    )
+    image_alt = models.CharField(max_length=100, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.IntegerField(choices=CATEGORY, default=0)
     type = models.IntegerField(choices=TYPE, default=0)
     approved = models.BooleanField(default=False)
-    # featured_image = CloudinaryField('image', default='placeholder')
 
     class Meta:
         ordering = ["-created_at"]
