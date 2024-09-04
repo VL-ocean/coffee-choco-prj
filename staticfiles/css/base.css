@@ -39,11 +39,14 @@ main {
 footer {
     flex-shrink: 0;
     background-color: var(--off-white);
+    border-top: var(--border);
+}
+
+.socials {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-top: var(--border);
 }
 
 .social-icon {
@@ -83,4 +86,14 @@ img.logo {
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
     background-color: #00000040;
+}
+
+/* Posts */
+
+.posts {
+    text-decoration: none;
+}
+
+.posts:hover {
+    cursor: pointer;
 }
