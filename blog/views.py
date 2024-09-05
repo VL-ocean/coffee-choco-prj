@@ -8,6 +8,8 @@ from django.views.generic import (
 
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
+from django.db.models import Q
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Post
@@ -20,6 +22,20 @@ class Posts(ListView):
     template_name = "blog/posts.html"
     model = Post
     context_object_name = "posts"
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            posts = self.model.objects.filter(
+                Q(title__contains=query) | 
+                Q(description__contains=query) |
+                Q(content__contains=query) |
+                Q(category__contains=query) |
+                Q(type__contains=query)
+            )
+        else:
+            posts = self.model.objects.all()
+        return posts
 
 
 class PostDetail(DetailView):
