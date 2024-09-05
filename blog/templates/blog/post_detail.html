@@ -37,7 +37,7 @@
     </div>
     {% if request.user == post.user %}
     <div class="text-center">
-        <a href="" class="btn btn-light btn-outline-dark w-25 mb-2">Edit</a>
+        <a href="{% url 'edit_post' post.id %}" class="btn btn-light btn-outline-dark w-25 mb-2">Edit</a>
         <a href="{% url 'delete_post' post.id %}" class="btn btn-light btn-outline-dark w-25 mb-2">Delete</a>
     </div>
     {% endif %}
