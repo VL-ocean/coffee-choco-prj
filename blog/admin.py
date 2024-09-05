@@ -7,15 +7,16 @@ class PostAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "description",
-        "image",
         "status",
         "type",
         "category",
         "created_at",
+        "approved",
     )
     search_fields = ["title", "descripton", "content"]
     list_filter = (
         "status",
+        "approved",
         "type",
         "category",
         "created_at",

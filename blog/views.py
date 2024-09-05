@@ -23,6 +23,9 @@ class Posts(ListView):
     model = Post
     context_object_name = "posts"
 
+    queryset = Post.objects.filter(
+        status=1, approved=True).order_by('-created_at')
+
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
         if query:
@@ -31,10 +34,12 @@ class Posts(ListView):
                 Q(description__contains=query) |
                 Q(content__contains=query) |
                 Q(category__contains=query) |
-                Q(type__contains=query)
+                Q(type__contains=query),
+                status=1,
+                approved=True
             )
         else:
-            posts = self.model.objects.all()
+            posts = self.model.objects.filter(status=1, approved=True)
         return posts
 
 

@@ -6,14 +6,12 @@
 
 {% block content %}
 
+<h1 class="text-center p-2">
+    Latest Posts
+</h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center my-3">
-    <h1 class="text-center p-2">
-        Latest Posts
-    </h1>
-
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for post in posts %}
-
         <a href="{% url 'post_detail' post.id %}" class="posts" aria-label="Click to view {{post.title}}">
             <div class="col">
                 <div class="card h-100">
@@ -28,7 +26,6 @@
                 </div>
             </div>
         </a>
-
         {% endfor %}
     </div>
 </div>
