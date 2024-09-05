@@ -1,4 +1,8 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
+
+from django.contrib.auth.mixins import (
+    UserPassesTestMixin, LoginRequiredMixin
+)
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -33,3 +37,12 @@ class AddPost(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddPost, self).form_valid(form)
+
+
+class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """Delete a post"""
+    model = Post
+    success_url = "/blog/"
+
+    def test_func(self):
+        return self.request.user == self.get_object().user

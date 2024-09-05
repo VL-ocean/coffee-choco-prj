@@ -1,35 +1,46 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Blog {% endblock %}
+{% block title %}Post Detail - {{post.title}}{% endblock %}
 
 {% block content %}
 
-<div class="container d-flex flex-row flex-wrap justify-content-center my-3">
-    <h1 class="text-center p-2">
-        Latest Posts
-    </h1>
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
-        {% for post in posts %}
-
-        <a href="" class="posts" aria-label="Click to view {{post.title}}">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{{post.image.url}}" class="card-img-top" alt="{{post.image_alt}}">
-                    <div class="card-body">
-                        <h2 class="card-title">{{post.title}}</h2>
-                        <p class="card-text">{{post.description|truncatechars:150}}</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">By {{post.user}} | {{post.updated_at}}</small>
-                    </div>
+<div class="container">
+    <div class="card p-3 my-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ post.image.url }}" class="img-fluid rounded" alt="{{ post.image_alt }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title post-title mb-3 pb-2">{{ post.title}}</h1>
+                    <p class="card-text">{{ post.description }}</p>
                 </div>
             </div>
-        </a>
-
-        {% endfor %}
+        </div>
+        <div class="row p-3 post-content">
+            {{ post.content|safe }}
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                {% if post.updated_at == post.created_at %}
+                <p class="card-text"><small class="text-body-secondary"><span class="fw-bold">Updated on
+                        </span>{{post.updated_at}}</small></p>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                <p class="card-text text-start text-md-end"><small class="text-body-secondary">Posted by <span
+                            class="fw-bold">{{post.user}}</span>
+                        on {{post.created_at}}</small></p>
+            </div>
+        </div>
     </div>
+    {% if request.user == post.user %}
+    <div class="text-center">
+        <a href="" class="btn btn-light btn-outline-dark w-25 align-self-center mb-2">Edit</a>
+        <a href="" class="btn btn-light btn-outline-dark w-25 align-self-center mb-2">Delete</a>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}

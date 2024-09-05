@@ -81,7 +81,7 @@ img.logo {
 /* Form */
 
 .form {
-    width: 75%;
+    width: 100%;
     margin: 3% auto;
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
@@ -96,4 +96,44 @@ img.logo {
 
 .posts:hover {
     cursor: pointer;
+}
+
+/* Post Detail */
+
+.post-title {
+    border-bottom: 2px solid #e99767;
+}
+
+.post-content h2 {
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.post-content ul {
+    padding-left: 50px;
+}
+
+.post-content li {
+    list-style-type: none;
+    list-style-position: inside;
+    text-indent: -30px;
+}
+
+.post-content ul li::before {
+    background-color: #e99767;
+    border-radius: 7.5px;
+    content: "";
+    display: inline-block;
+    height: 10px;
+    margin-right: 20px;
+    width: 10px;
+}
+
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    /* Form */
+    .form {
+        width: 75%;
+    }
 }
