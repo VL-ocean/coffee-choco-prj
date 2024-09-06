@@ -1,4 +1,4 @@
-# Coffee & Chocolate Blog [(*Live site*)]()
+# Coffee & Chocolate Blog [(*Live site*)](https://coffee-choco-blog-7ff7b0b383df.herokuapp.com/)
 
 
 ## Introduction 
@@ -174,8 +174,11 @@ The database model diagram was designed using Lucidchart
 **Gunicorn**
 * Python HTTP server for WSGI applications.
 
-**Django Rich Text Field**
-* WYSIWYG editor. Used for comment form.
+**Django RichTextField**
+* A Django model field and widget that renders a customizable rich text/WYSIWYG widget.
+
+**Django Resized**
+* Resizes image origin to specified size.
 
 **Cloudinary**
 * The cloud platform used to store static media files.
@@ -223,7 +226,19 @@ Testing includes the following:
 
 ## Credits
 
+### Colour Theme
 
+- [Dark Chocolate colour theme by kumakay](https://color.adobe.com/Dark-Chocolate-color-theme-302341/)
+- [Brown coffee chocolate beige theme by Elisa Cazzulo](https://color.adobe.com/de09e28a57de007f885d0c16d3e3-color-theme-12966174/)
+
+### Project
+
+- [Blossom-Therapy-Insights blog](https://github.com/Indre-V/blossom-therapy)
+
+### Articles/recipes
+
+- [Chocolate Orange and Lemon Mousse Dessert Cups](https://lilyobriens.ie/blog/post/chocolate-orange-and-lemon-mousse-dessert-cups)
+- [Frozen Hot Chocolate](https://www.tasteofhome.com/recipes/frozen-hot-chocolate/)
 
 
 ## Acknowledgements
