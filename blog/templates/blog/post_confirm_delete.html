@@ -12,7 +12,7 @@
             {% csrf_token %}
             <p>Are you sure you want to delete "{{object.title}}"?</p>
             <input type="submit" value="Confirm" class="btn btn-light btn-outline-danger w-25 mb-2">
-            <a href="{% url 'post_detail' post.slug %}" class="btn btn-light btn-outline-dark w-25 mb-2">Cancel</a>
+            <a href="{% url 'post_detail' post.id %}" class="btn btn-light btn-outline-dark w-25 mb-2">Cancel</a>
         </form>
     </div>
 </div>
