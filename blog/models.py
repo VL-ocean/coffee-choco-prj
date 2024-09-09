@@ -18,7 +18,6 @@ class Post(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_owner")
     title = models.CharField(max_length=300, unique=True, null=False, blank=False)
-    slug = models.SlugField(max_length=300, unique=True)
     description = models.CharField(max_length=500, null=False, blank=False)
     content = RichTextField(max_length=30000, null=False, blank=False)
     image = ResizedImageField(

@@ -22,6 +22,7 @@ class Posts(ListView):
     template_name = "blog/posts.html"
     model = Post
     context_object_name = "posts"
+    paginate_by = 6
 
     queryset = Post.objects.filter(
         status=1, approved=True).order_by('-created_at')

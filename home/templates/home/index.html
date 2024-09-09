@@ -11,14 +11,16 @@
         <div class="hero-image d-flex justify-content-center align-items-center">
             <div class="heading-container bg-black bg-opacity-50 m-0 text-center text-light">
                 <h1 class="main-title p-4">Welcome to a coffee and chocolate lover's paradise!</h1>
-                <p class="px-4 pb-3">Explore recipes, read articles, join the discussion in the comments and more.... Each post is guaranteed to be dedicated to coffee or chocolate! Let's share the love and knowledge of what we love!</p>
+                <p class="px-4 pb-3">Explore recipes, read articles, join the discussion in the comments and more....
+                    Each post is guaranteed to be dedicated to coffee or chocolate! Let's share the love and knowledge
+                    of what we love!</p>
             </div>
         </div>
     </section>
     <section class="container my-3">
         <h1 class="text-center p-2">Latest Posts</h1>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            {% for post in posts %}
+            {% for post in latest_posts %}
             <a href="{% url 'post_detail' post.id %}" class="posts" aria-label="Click to view {{post.title}}">
                 <div class="col">
                     <div class="card h-100">
