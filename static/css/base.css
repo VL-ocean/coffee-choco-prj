@@ -113,7 +113,9 @@ img.logo {
     border-bottom: 2px solid #e99767;
 }
 
-.post-content h2 {
+.post-content h1,
+.post-content h2,
+.post-content h3 {
     text-align: center;
     padding-bottom: 8px;
 }
