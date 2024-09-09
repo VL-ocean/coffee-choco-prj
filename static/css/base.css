@@ -55,6 +55,7 @@ footer {
 }
 
 /* Header */
+
 .navbar {
     background-color: var(--off-white);
     box-shadow: var(--small-box-shadow);
@@ -67,6 +68,7 @@ a.navbar-brand {
 
 a.nav-link {
     color: #592c12;
+    padding-left: 10px;
 }
 
 img.logo {
@@ -74,7 +76,7 @@ img.logo {
 }
 
 .active {
-    border-bottom: 2px solid #5f4e2a;
+    border-left: 2px solid #5f4e2a;
     font-weight: 500;
 }
 
@@ -129,11 +131,68 @@ img.logo {
     width: 10px;
 }
 
+/* Home */
+
+.hero-image {    
+    height: 450px;
+    width: 100%;
+    background-image: url("../images/hero-image.webp");
+    background-size: cover;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-position: 80%;
+}
+
+
+/* Media query: large or landscape phones (576px and up) */
+@media screen and (min-width: 576px) {  
+
+    /* Home */
+
+    .hero-image {
+        height: 350px;
+    }
+}
+
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+
+    /* Home */
+
+    .hero-image {
+        height: 400px;
+    }
+}
+
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+
     /* Form */
+
     .form {
         width: 75%;
+    }
+
+    /* Header */
+
+    .a.nav-link {
+        padding-left: 0;
+    }
+
+    .active {
+        border-left: none;
+        border-bottom: 2px solid #5f4e2a;
+    }
+}
+
+/* Larger devices (laptops and desktops, 1024px and up) */
+@media screen and (min-width: 1024px) {
+
+    /* Home */
+
+    .hero-image {
+        height: 450px;
     }
 }

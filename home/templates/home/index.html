@@ -1,1 +1,41 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="container flex-column py-3">
+    <section>
+        <div class="hero-image d-flex justify-content-center align-items-center">
+            <div class="heading-container bg-black bg-opacity-50 m-0 text-center text-light">
+                <h1 class="main-title p-4">Welcome to a coffee and chocolate lover's paradise!</h1>
+                <p class="px-4 pb-3">Explore recipes, read articles, join the discussion in the comments and more.... Each post is guaranteed to be dedicated to coffee or chocolate! Let's share the love and knowledge of what we love!</p>
+            </div>
+        </div>
+    </section>
+    <section class="container my-3">
+        <h1 class="text-center p-2">Latest Posts</h1>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for post in posts %}
+            <a href="{% url 'post_detail' post.id %}" class="posts" aria-label="Click to view {{post.title}}">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{post.image.url}}" class="card-img-top" alt="{{post.image_alt}}">
+                        <div class="card-body">
+                            <h2 class="card-title">{{post.title}}</h2>
+                            <p class="card-text">{{post.description|truncatechars:150}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">By {{post.user}} | {{post.updated_at}}</small>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+{% endblock %}
