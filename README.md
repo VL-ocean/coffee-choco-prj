@@ -30,8 +30,10 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
     - [Coding languages used](#coding-languages-used)
     - [Frameworks and Libraries used](#frameworks-and-libraries-used)
   - [Testing](#testing)
-  - [Deployment and local development](#deployment-and-local-development)
-    - [Deployment](#deployment)
+  - [Deployment](#deployment)
+    - [To deploy the project to Heroku](#to-deploy-the-project-to-heroku)
+    - [To fork the project](#to-fork-the-project)
+    - [To clone the project](#to-clone-the-project)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
@@ -219,9 +221,56 @@ Testing includes the following:
 * Bugs
 
 
-## Deployment and local development
+## Deployment
 
-### Deployment
+### To deploy the project to Heroku
+
+Follow these steps to deploy your Django project to Heroku from VS Code:
+| ||
+| --- | --- |
+| **Step 1** Create a New Heroku App |
+| - Access the Heroku Dashboard: Log in to your Heroku account and access the dashboard. |
+| - Create a New App: Click on the New button in the top-right corner of the dashboard and select Create new app from the dropdown menu. |
+| - App Name and Region: Enter a unique name for your app and choose a region closest to you (EU or USA). Click Create App to create the app. |
+| **Step 2** Configure Environment Variables |
+| - Reveal Config Vars: From the new app Settings, click Reveal Config Vars. |
+| - Set Environment Variables: Set your environment variables as follows: |
+|   - `CLOUDINARY_URL`: Insert your own Cloudinary API key here. |
+|   - `DATABASE_URL`: Insert your own ElephantSQL database URL here. |
+|   - `DISABLE_COLLECTSTATIC`: Set to 1 for temporary purposes, and remove it for the final deployment. |
+|   - `SECRET_KEY`: This can be any random secret key. |
+| **Step 3** Prepare the Project for Deployment |
+| - Create a `requirements.txt` File: This file lists all the dependencies required by your project. You can install the project's requirements using `pip3 install -r requirements.txt`. If you have your own packages installed, update the `requirements.txt` file using `pip3 freeze --local > requirements.txt`. |
+| - Create a `Procfile`: This file specifies the commands Heroku should run to start your app. Create the Procfile using `echo web: gunicorn app_name.wsgi > Procfile`. Replace `app_name` with the name of your primary Django app, which is the folder where `settings.py` is located. |
+| **Step 4** Connect Your GitHub Repository to Heroku |
+| - Automatic Deployment: Select Automatic Deployment from the Heroku app settings to automatically deploy your app whenever you push changes to your GitHub repository. |
+| - Manual Deployment: Alternatively, you can connect your GitHub repository to Heroku manually using the Terminal/CLI: |
+|   - Login to Heroku: Run `heroku login -i` to log in to your Heroku account. |
+|   - Set the Remote for Heroku: Run `heroku git:remote -a app_name` to set the remote for Heroku. Replace `app_name` with your app name. |
+|   - Push to Heroku: After performing the standard Git add, commit, and push to GitHub, you can now type `git push heroku main` to deploy your app. |
+| **Step 5**  Verify Your Deployment |
+| - Open App: Once your app is deployed, you can open it by clicking on the Open App button in the Heroku dashboard. This will open your app in a web browser. |
+| - Verify App: Verify that your app is running correctly by checking for any errors or issues. |
+
+### To fork the project
+
+Forking the **GitHub** repository allows you to create a duplicate of a local repository. This is done so that modifications to the copy can be performed without compromising the original repository.
+
+- Log in to **GitHub**.
+- Locate the repository.
+- Click to open it.
+- The fork button is located on the right side of the repository menu.
+- To copy the repository to your **GitHub** account, click the button.
+
+### To clone the project
+
+- Log in to **GitHub**.
+- Navigate to the main page of the repository and click **Code**.
+- Copy the **URL** for the repository.
+- Open your local **IDE**.
+- Change the current working directory to the location where you want the cloned directory.
+- Type git clone, and then paste the **URL** you copied earlier.
+- Press **Enter** to create your local clone.
 
 
 ## Credits

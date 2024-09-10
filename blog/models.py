@@ -44,6 +44,10 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    A model to create and manage comments
+    """
+    
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(

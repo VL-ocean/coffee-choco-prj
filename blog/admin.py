@@ -4,6 +4,9 @@ from .models import Post, Comment
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    """
+    Allows admin to manage posts via the admin panel
+    """
     list_display = (
         "title",
         "description",
@@ -26,6 +29,9 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    """
+    Allows admin to manage comments on posts via the admin panel
+    """
     list_display = (
         "user",
         "body",
@@ -35,8 +41,8 @@ class CommentAdmin(admin.ModelAdmin):
     )
     search_fields = ["body", "post", "user"]
     list_filter = (
-        "post",
         "approved",
         "created_at",
         "updated_at",
+        "post",
     )
