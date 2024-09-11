@@ -124,7 +124,11 @@ img.logo {
     padding-left: 50px;
 }
 
-.post-content li {
+.post-content ol {
+    padding-left: 30px;
+}
+
+.post-content ul li {
     list-style-type: none;
     list-style-position: inside;
     text-indent: -30px;

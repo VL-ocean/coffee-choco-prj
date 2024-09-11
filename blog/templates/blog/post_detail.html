@@ -7,6 +7,11 @@
 
 <div class="container">
     <div class="card p-3 my-3">
+        {% if not post.approved and post.user == user %}
+        <div class="card-body text-end">
+            <small class="text-end text-body-secondary">The post is awaiting approval</small>
+        </div>
+        {% endif %}
         <div class="row g-0">
             <div class="col-md-4">
                 <img src="{{ post.image.url }}" class="img-fluid rounded" alt="{{ post.image_alt }}">

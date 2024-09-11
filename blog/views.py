@@ -36,11 +36,11 @@ class Posts(ListView):
                 Q(content__contains=query) |
                 Q(category__contains=query) |
                 Q(type__contains=query),
-                status=1,
+                status=1, 
                 approved=True
             )
         else:
-            posts = self.model.objects.filter(status=1, approved=True)
+            posts = self.model.objects.filter(status=1, approved=True).order_by('-created_at')
         return posts
 
 
@@ -72,6 +72,9 @@ class EditPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     form_class = PostForm
     success_url = "/blog/"
+
+    def post(request, *args, **kwargs):
+        self.object.approved = False
 
     def test_func(self):
         return self.request.user == self.get_object().user

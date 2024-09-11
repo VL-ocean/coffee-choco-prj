@@ -1,6 +1,6 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
-from .models import Post, Comment
+from .models import Post
 
 
 class PostForm(forms.ModelForm):
@@ -35,11 +35,3 @@ class PostForm(forms.ModelForm):
             "category": "Category",
             "type": "Post Type",
         }
-
-
-class CommentForm(forms.ModelForm):
-    """Form to create a comment"""
-    
-    class Meta:
-        model = Comment
-        fields = ['body']
