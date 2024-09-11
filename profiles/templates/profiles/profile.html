@@ -7,54 +7,86 @@
 {% block content %}
 
 <div class="container p-4">
-    <div class="profile">
-        <div class="info">
-            <div class="profile-image text-center">
+    <div class="profile d-flex flex-column justify-content-center">
+        <div class="info d-flex flex-column flex-md-row justify-content-start m-2">
+            <div class="profile-image mx-3 align-self-center">
                 {% if profile.image.url is not none %}
-                <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image">
+                <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image" class="img-fluid rounded">
                 {% else %}
-                <img src="{% static 'images/image-placeholder.webp' %}" alt="Image not found">
+                <img src="{% static 'images/image-placeholder.webp' %}" alt="Image not found" class="img-fluid rounded">
                 {% endif %}
             </div>
-            <h1>{{ profile.user.username }}</h1>
-            <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
-            <p><strong>Posts: </strong>{{ profile.user.post_owner.count }}</p>
-            {% if profile.bio is not none %}
-            {{ profile.bio|safe }}
+            <div class="profile-content m-2 text-center text-md-start">
+                <h1 class="py-2">{{ profile.user.username }}</h1>
+                <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
+                <p><strong>Posts: </strong>{{ profile.user.post_owner.count }}</p>
+                {% if profile.bio is not none %}
+                {{ profile.bio|safe }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="container-fluid text-center">
+            {% if request.user == profile.user %}
+            <!-- Button trigger modal -->  
+            <button id="myBtn" class="btn btn-light btn-outline-dark w-25 m-2" data-bs-toggle="modal" data-bs-target="#myModal">Edit</button>
             {% endif %}
         </div>
-        <div class="profile-posts">
-            <h2 class="text-center pb-4">Posts</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="profile-posts w-100">
+            <h2 class="text-center py-4">Posts</h2>
+            <!-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> -->
+            <div class="container-fluid">
                 {% for post in profile.user.post_owner.all %}
                 <a href="{% url 'post_detail' post.id %}" class="posts {% if not post.approved and post.user == user %}
                 d-block{% elif not post.approved %}d-none{% endif %}" aria-label="Click to view {{post.title}}">
-                    <div class="col">
-                        <div class="card h-100">
-                            {% if post.status == 1 and not post.approved and post.user == user %}
-                            <div class="card-header text-center">
-                                <small class="text-body-secondary">The post is awaiting approval</small>
-                            </div>
-                            {% elif post.status == 0 and post.user == user %}
-                            <div class="card-header  text-center">
-                                <small class="text-body-secondary">This is a draft</small>
-                            </div>
-                            {% endif %}
-                            <img src="{{post.image.url}}" class="{% if not post.approved and post.user == user %}image-fluid{% else %}card-img-top{% endif %}" alt="{{post.image_alt}}">
-                            <div class="card-body">
-                                <h2 class="card-title">{{post.title}}</h2>
-                                <p class="card-text">{{post.description|truncatechars:150}}</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">By {{post.user}} | {{post.updated_at}}</small>
-                            </div>
+                    <div class="card bg-black opacity-75 mb-3 text-white">
+                        {% if post.status == 1 and not post.approved and post.user == user %}
+                        <div class="card-header text-center bg-white">
+                            <small class="text-black">The post is awaiting approval</small>
                         </div>
+                        {% elif post.status == 0 and post.user == user %}
+                        <div class="card-header text-center bg-white">
+                            <small class="text-black">This is a draft</small>
+                        </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <h3 class="card-title">{{post.title}}</h3>
+                            <hr>
+                            <p class="card-text">{{post.description}}</p>
+                        </div>
+                        <div class="card-footer text-black bg-white">{{post.created_at}}</div>
                     </div>
                 </a>
                 {% endfor %}
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="myModalLabel">Edit Profile</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{% url 'edit_profile' request.user.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        {{ form.media }}
+                        <div class="d-flex flex-row justify-content-end">
+                            <button type="button" class="btn btn-light btn-outline-dark mx-2" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-light btn-outline-dark mx-2">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
