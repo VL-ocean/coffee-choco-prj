@@ -73,9 +73,6 @@ class EditPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = PostForm
     success_url = "/blog/"
 
-    def post(request, *args, **kwargs):
-        self.object.approved = False
-
     def test_func(self):
         return self.request.user == self.get_object().user
 

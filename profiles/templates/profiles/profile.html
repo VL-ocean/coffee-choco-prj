@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Profile - {{profile.user.username}}{% endblock %}
+
+{% block content %}
+
+<div class="container p-4">
+    <div class="profile">
+        <div class="info">
+            <div class="profile-image text-center">
+                {% if profile.image.url is not none %}
+                <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image">
+                {% else %}
+                <img src="{% static 'images/image-placeholder.webp' %}" alt="Image not found">
+                {% endif %}
+            </div>
+            <h1>{{ profile.user.username }}</h1>
+            <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
+            <p><strong>Posts: </strong>{{ profile.user.post_owner.count }}</p>
+            {% if profile.bio is not none %}
+            {{ profile.bio|safe }}
+            {% endif %}
+        </div>
+        <div class="profile-posts">
+            <h2 class="text-center pb-4">Posts</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for post in profile.user.post_owner.all %}
+                <a href="{% url 'post_detail' post.id %}" class="posts {% if not post.approved and post.user == user %}
+                d-block{% elif not post.approved %}d-none{% endif %}" aria-label="Click to view {{post.title}}">
+                    <div class="col">
+                        <div class="card h-100">
+                            {% if post.status == 1 and not post.approved and post.user == user %}
+                            <div class="card-header text-center">
+                                <small class="text-body-secondary">The post is awaiting approval</small>
+                            </div>
+                            {% elif post.status == 0 and post.user == user %}
+                            <div class="card-header  text-center">
+                                <small class="text-body-secondary">This is a draft</small>
+                            </div>
+                            {% endif %}
+                            <img src="{{post.image.url}}" class="{% if not post.approved and post.user == user %}image-fluid{% else %}card-img-top{% endif %}" alt="{{post.image_alt}}">
+                            <div class="card-body">
+                                <h2 class="card-title">{{post.title}}</h2>
+                                <p class="card-text">{{post.description|truncatechars:150}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">By {{post.user}} | {{post.updated_at}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

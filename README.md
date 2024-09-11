@@ -297,6 +297,8 @@ Forking the **GitHub** repository allows you to create a duplicate of a local re
 ### Media
 
 - [Coffee and Chocolate photo](https://www.pexels.com/photo/white-printer-paper-on-brown-textile-10254303/)
+- [Blog Letters on Brown Wood](https://www.pexels.com/photo/blog-letters-on-brown-wood-262508/)
+- [error 404](https://www.pexels.com/photo/error-404-27968632/)
 
 
 ## Acknowledgements
