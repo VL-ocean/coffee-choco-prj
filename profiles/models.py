@@ -13,8 +13,8 @@ class Profile(models.Model):
 
     user = models.ForeignKey(User, related_name="profile", on_delete=models.CASCADE)
     image = ResizedImageField(
-        size=[300, 300],
-        quality=75,
+        size=None,
+        quality=100,
         upload_to="profiles/",
         force_format="WEBP",
         blank=False,

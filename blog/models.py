@@ -21,8 +21,8 @@ class Post(models.Model):
     description = models.CharField(max_length=500, null=False, blank=False)
     content = RichTextField(max_length=30000, null=False, blank=False)
     image = ResizedImageField(
-        size=[400, None],
-        quality=75,
+        size=None,
+        quality=100,
         upload_to="posts/",
         force_format="WEBP",
         blank=False,

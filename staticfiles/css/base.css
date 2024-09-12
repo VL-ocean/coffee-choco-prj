@@ -156,6 +156,16 @@ img.logo {
     background-position: 80%;
 }
 
+/* Profile */
+
+.profile-image {
+    max-width: 400px;
+}
+
+.profile-content {
+    min-width: 30%;
+}
+
 /* Media query: large or landscape phones (576px and up) */
 @media screen and (min-width: 576px) {
 
