@@ -91,12 +91,12 @@
 {% block extra_js %}
 {{ block.super }}
 <script>
-    // Bootstrap Modal
+    // Profile Modal
     const myModal = document.getElementById('myModal')
     const myInput = document.getElementById('id_image')
 
     myModal.addEventListener('shown.bs.modal', () => {
-    myInput.focus()
+        myInput.focus()
     })
 </script>
 {% endblock %}
