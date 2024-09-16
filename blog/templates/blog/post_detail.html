@@ -58,16 +58,15 @@
         </div>
         <div class="d-flex flex-column-reverse">
             {% for comment in post.comments.all %}
-            <div class="d-flex align-items-center m-2 bg-light p-2 rounded {% if not comment.approved and comment.user == user %}d-block bg-body-secondary{% elif not comment.approved %}d-none{% endif %}">
+            <div
+                class="d-flex align-items-center m-2 bg-light p-2 rounded {% if not comment.approved and comment.user == user %}d-block bg-body-secondary{% elif not comment.approved %}d-none{% endif %}">
                 <div class="flex-shrink-0 comment-prof-image">
-                    {% if profile.image.url is not none %}
-                    <img src="{{ comment.user.profile.image.url }}" alt="{{ comment.user.username }}'s profile image" class="img-fluid">
-                    {% else %}
-                    <img src="{% static 'images/image-placeholder.webp' %}" alt="{{ comment.user.username }}'s profile image" class="img-fluid">
-                    {% endif %}
+                    <img src="{{ comment.user.profile.image.url }}" alt="{{ comment.user.username }}'s profile image"
+                        class="img-fluid">
                 </div>
                 <div class="flex-grow-1 ms-3 p-2 align-self-start">
-                    <h3 class="comment-author fs-6 border-bottom border-dark text-body-secondary"><strong>{{comment.user.username}}</strong> |
+                    <h3 class="comment-author fs-6 border-bottom border-dark text-body-secondary">
+                        <strong>{{comment.user.username}}</strong> |
                         {% if comment.created_at == comment.updated_at %}{{comment.created_at}}{% else %}{{comment.updated_at}}{%endif%}
                     </h3>
                     <p>{{ comment.body }}</p>

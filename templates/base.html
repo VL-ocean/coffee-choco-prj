@@ -42,7 +42,19 @@
     {% include 'includes/footer.html' %}
 
     {% block extra_js %}
-
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const intId = setInterval(() => {
+                const popup = document.querySelector(".cke_notifications_area");
+                console.log("try");
+                if (popup) {
+                    popup.style.display = "none";
+                    console.log(popup);
+                    clearInterval(intId);
+                }
+            }, 100);
+        });
+    </script>
     {% endblock %}
 </body>
 

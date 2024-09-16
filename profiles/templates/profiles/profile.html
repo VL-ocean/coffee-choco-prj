@@ -10,12 +10,8 @@
     <div class="profile d-flex flex-column justify-content-center">
         <div class="info d-flex flex-column flex-md-row justify-content-start m-2">
             <div class="profile-image mx-3 align-self-center">
-                {% if profile.image.url is not none %}
                 <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image"
                     class="img-fluid rounded">
-                {% else %}
-                <img src="{% static 'images/image-placeholder.webp' %}" alt="Image not found" class="img-fluid rounded">
-                {% endif %}
             </div>
             <div class="profile-content m-2 text-center text-md-start">
                 <h1 class="py-2">{{ profile.user.username }}</h1>
