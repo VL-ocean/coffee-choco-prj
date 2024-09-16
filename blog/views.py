@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse_lazy
 
 from django.views.generic import (
     CreateView,
@@ -104,4 +105,14 @@ class AddComment(LoginRequiredMixin, DetailView):
         return redirect(f'/blog/{post_id}')
 
     def get(self, request, *args, **kwargs):
-        return redirect(f'/blog/{post_id}')  
+        return redirect(f'/blog/{post_id}')
+
+
+class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """Delete a comment"""
+
+    model = Comment
+    success_url = "/blog/"
+
+    def test_func(self):
+        return self.request.user == self.get_object().user

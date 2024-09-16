@@ -43,6 +43,7 @@
 
     {% block extra_js %}
     <script>
+        // Remove warning about CKE editor
         document.addEventListener("DOMContentLoaded", () => {
             const intId = setInterval(() => {
                 const popup = document.querySelector(".cke_notifications_area");
@@ -54,6 +55,10 @@
                 }
             }, 100);
         });
+
+        // Tooltip
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
     {% endblock %}
 </body>

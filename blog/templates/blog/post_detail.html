@@ -59,7 +59,7 @@
         <div class="d-flex flex-column-reverse">
             {% for comment in post.comments.all %}
             <div
-                class="d-flex align-items-center m-2 bg-light p-2 rounded {% if not comment.approved and comment.user == user %}d-block bg-body-secondary{% elif not comment.approved %}d-none{% endif %}">
+                class="d-flex align-items-center m-2 bg-light p-2 rounded position-relative {% if not comment.approved and comment.user == user %}d-block bg-body-secondary{% elif not comment.approved %}d-none{% endif %}">
                 <div class="flex-shrink-0 comment-prof-image">
                     <img src="{{ comment.user.profile.image.url }}" alt="{{ comment.user.username }}'s profile image"
                         class="img-fluid">
@@ -76,6 +76,11 @@
                     </div>
                     {% endif %}
                 </div>
+                {% if user.is_authenticated and comment.user == user %}
+                <div class="text-center position-absolute top-0 end-0">
+                    <a href="{% url 'delete_comment' comment.id %}" aria-label="Delete the comment" class="btn link-danger" data-bs-toggle="tooltip" data-bs-title="Delete the comment">X</a>
+                </div>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
@@ -110,7 +115,7 @@
 {% block extra_js %}
 {{ block.super }}
 <script>
-    // Bootstrap Modal
+    // Comment Modal
     const myCommentModal = document.getElementById('myCommentModal')
     const myCommentInput = document.getElementById('body')
 
