@@ -144,6 +144,17 @@ img.logo {
     width: 10px;
 }
 
+/* Comment section */
+
+.comment-author {
+    font-family: var(--sub-title);
+}
+
+.comment-prof-image {
+    max-width: 20%;
+    min-width: 100px;
+}
+
 /* Home */
 
 .hero-image {

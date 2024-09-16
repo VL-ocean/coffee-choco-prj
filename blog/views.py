@@ -1,3 +1,5 @@
+from django.shortcuts import get_object_or_404, redirect
+
 from django.views.generic import (
     CreateView,
     ListView,
@@ -12,7 +14,7 @@ from django.db.models import Q
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import Post
+from .models import Post, Comment
 from .forms import PostForm
 
 
@@ -85,3 +87,21 @@ class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+
+class AddComment(LoginRequiredMixin, DetailView):
+    """Add a comment"""
+
+    def post(self, request, *args, **kwargs):
+        body = request.POST.get('body')
+        user = request.user
+        post_id = request.POST.get('post_id')
+        post = get_object_or_404(Post, id=post_id)
+
+        comment_instance = Comment(body=body, user=user, post=post)
+        comment_instance.save()
+
+        return redirect(f'/blog/{post_id}')
+
+    def get(self, request, *args, **kwargs):
+        return redirect(f'/blog/{post_id}')  

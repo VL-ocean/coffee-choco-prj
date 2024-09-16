@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 
 
 @admin.register(Post)
@@ -24,4 +24,25 @@ class PostAdmin(admin.ModelAdmin):
         "category",
         "created_at",
         "updated_at",
+    )
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """
+    Allows admin to manage comments via the admin panel
+    """
+    list_display = (
+        "user",
+        "body",
+        "created_at",
+        "approved",
+
+    )
+    search_fields = ["body", "user", "post"]
+    list_filter = (
+        "created_at",
+        "updated_at",
+        "user",
+        "post",
     )

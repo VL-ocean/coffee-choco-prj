@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}Post Detail - {{post.title}}{% endblock %}
 
@@ -46,6 +47,76 @@
         <a href="{% url 'delete_post' post.id %}" class="btn btn-light btn-outline-dark w-25 mb-2">Delete</a>
     </div>
     {% endif %}
+    <div class="my-3">
+        <div class="d-flex flex-row justify-content-between">
+            <h2 class="ms-3 p-2 d-block">Comments...</h2>
+            {% if user.is_authenticated %}
+            <!-- Button trigger modal -->
+            <button id="myBtn" class="btn btn-light btn-outline-dark m-2 h-75 align-self-center" data-bs-toggle="modal"
+                data-bs-target="#myCommentModal">Add comment</button>
+            {% endif %}
+        </div>
+        <div class="d-flex flex-column-reverse">
+            {% for comment in post.comments.all %}
+            <div class="d-flex align-items-center m-2 bg-light p-2 rounded {% if not comment.approved and comment.user == user %}d-block bg-body-secondary{% elif not comment.approved %}d-none{% endif %}">
+                <div class="flex-shrink-0 comment-prof-image">
+                    {% if profile.image.url is not none %}
+                    <img src="{{ comment.user.profile.image.url }}" alt="{{ comment.user.username }}'s profile image" class="img-fluid">
+                    {% else %}
+                    <img src="{% static 'images/image-placeholder.webp' %}" alt="{{ comment.user.username }}'s profile image" class="img-fluid">
+                    {% endif %}
+                </div>
+                <div class="flex-grow-1 ms-3 p-2 align-self-start">
+                    <h3 class="comment-author fs-6 border-bottom border-dark text-body-secondary"><strong>{{comment.user.username}}</strong> |
+                        {% if comment.created_at == comment.updated_at %}{{comment.created_at}}{% else %}{{comment.updated_at}}{%endif%}
+                    </h3>
+                    <p>{{ comment.body }}</p>
+                    {% if not comment.approved and comment.user == user %}
+                    <div class="text-center text-body-secondary pt-2">
+                        <small>The comment is awaiting approval</small>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myCommentModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="myModalLabel">Add Comment</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{% url 'add_comment' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="post_id" value="{{ post.id }}">
+                        <textarea name="body" class="form-control" id="body" rows="5" cols="15"></textarea>
+                        <div class="d-flex flex-row justify-content-end mt-3">
+                            <button type="button" class="btn btn-light btn-outline-dark mx-2"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-light btn-outline-dark mx-2">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+    // Bootstrap Modal
+    const myCommentModal = document.getElementById('myCommentModal')
+    const myCommentInput = document.getElementById('body')
+
+    myCommentModal.addEventListener('shown.bs.modal', () => {
+        myCommentInput.focus()
+    })
+</script>
 {% endblock %}
