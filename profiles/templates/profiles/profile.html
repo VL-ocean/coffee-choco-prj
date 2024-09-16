@@ -31,7 +31,6 @@
         </div>
         <div class="profile-posts w-100">
             <h2 class="text-center py-4">Posts</h2>
-            <!-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> -->
             <div class="container-fluid">
                 {% for post in profile.user.post_owner.all %}
                 <a href="{% url 'post_detail' post.id %}" class="posts {% if not post.approved and post.user == user %}
@@ -54,6 +53,10 @@
                         <div class="card-footer text-black bg-white">{{post.created_at}}</div>
                     </div>
                 </a>
+                {% empty %}
+                <div class="text-center p-3 m-2 bg-light rounded justify-content-center align-content-center">
+                    <p class="text-body-secondary m-0">No posts yet</p>
+                </div>
                 {% endfor %}
             </div>
         </div>

@@ -59,12 +59,8 @@
         <div class="d-flex flex-column-reverse">
             {% for comment in post.comments.all %}
             <div
-                class="d-flex align-items-center m-2 bg-light p-2 rounded position-relative {% if not comment.approved and comment.user == user %}d-block bg-body-secondary{% elif not comment.approved %}d-none{% endif %}">
-                <div class="flex-shrink-0 comment-prof-image">
-                    <img src="{{ comment.user.profile.image.url }}" alt="{{ comment.user.username }}'s profile image"
-                        class="img-fluid">
-                </div>
-                <div class="flex-grow-1 ms-3 p-2 align-self-start">
+                class="d-flex align-items-start m-2 bg-light p-2 rounded position-relative {% if not comment.approved and comment.user == user %}d-block bg-body-secondary{% elif not comment.approved %}d-none{% endif %}">
+                <div class="flex-grow-1 p-2">
                     <h3 class="comment-author fs-6 border-bottom border-dark text-body-secondary">
                         <strong>{{comment.user.username}}</strong> |
                         {% if comment.created_at == comment.updated_at %}{{comment.created_at}}{% else %}{{comment.updated_at}}{%endif%}
@@ -81,6 +77,10 @@
                     <a href="{% url 'delete_comment' comment.id %}" aria-label="Delete the comment" class="btn link-danger" data-bs-toggle="tooltip" data-bs-title="Delete the comment">X</a>
                 </div>
                 {% endif %}
+            </div>
+            {% empty %}
+            <div class="text-center p-3 m-2 bg-light rounded justify-content-center align-content-center">
+                <p class="text-body-secondary m-0">No comments yet</p>
             </div>
             {% endfor %}
         </div>
