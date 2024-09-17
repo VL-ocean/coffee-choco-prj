@@ -35,6 +35,11 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
     - [To fork the project](#to-fork-the-project)
     - [To clone the project](#to-clone-the-project)
   - [Credits](#credits)
+    - [Colour Theme](#colour-theme)
+    - [Project](#project)
+    - [Articles and Recipes](#articles--recipes)
+    - [Media](#media)
+    - [Tools](#tools)
   - [Acknowledgements](#acknowledgements)
 
 
@@ -53,14 +58,13 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
 * Find out the purpose of the site and how to use it
 * Be able to easily navigate throughout the site
 * See a list of posts to see if the site is something they would be interested in
-* See the top posts
-* Filter post by category
+* See the latest posts
 * Be able to register for a user account
 
 **Registered User would like to**
 
 * Sign into their user account
-* View posts and leave comments and likes
+* View posts and leave comments
 * Create their own post
 * Edit and delete their own posts only
 * Logout of their account to keep their account secure
@@ -80,6 +84,8 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
 ## UX design
 
 ### Wireframe
+
+The original layouts look different from the finished blog as some changes were made during the development process.
 
 <details>
 <summary>Home</summary>
@@ -136,8 +142,38 @@ The database model diagram was designed using Lucidchart
 
 ### Colour Scheme
 
+The colours were mostly taken from bootstrap colour palette. They are:
+- `#212529` - text colour for post, comment, buttons; outline and hover effects on buttons
+- `#FFFFFF` - background colour for post, modal; text colour for buttons when hovered over
+- `#212529BF` - text colour for secondary text in post, comment
+- `#21252908` - background colour for secondary text on the post card
+- `#e9ecef` - background colour for comment that is waiting for approval
+- `#dc3545` - text colour for X icon used for deleting the comment; text colour and border colour for confirm button when deleting post or comment; background colour for confirm button when hovered over
+- `#f6f6f6` - background colour for header, footer
+- `#86b7fe` - border colour and shadow for input when focused on it
+- `#f8f9fa` - background colour for text messages ("No posts yet", "No comments yet"), buttons; text colour for welcome text on the home page
+- `#000000` - text colour for active navigation menu item
+- `#d1e7dd` - background colour for message
+- `#0a3622` - text colour for message 
+- `#a3cfbb` - border colour for message
+- `#00000040` - background colour for login, signup forms
+- `#00000080` - background colour for welcome text on the home page
+
+Custom colours:
+- `#e99767` - border accent colour for post title; circle colour for unordered list item's marker
+- `#592c12` - text colour for navigation menu items
+- `#f2d9cb` - background colour for main content
+- `#5f4e2a` - border colour for active navigation menu item
+
+![Custom colour palette](./README-images/colour-palette.jpeg)
+
 ### Fonts
 
+'Playfair Display' (backup 'serif') was used as a main title font. It looks nice for titles and subtitles for posts.
+'Halant' (backup 'serif') was used as a sub-title font. It was rarely used but it also looks nice with the other two fonts.
+'Roboto' (backup 'serif') was used as a main text font. It is easy to read even if the text is small.
+
+![Fonts](./README-images/fonts.png)
 
 ## Features
 
@@ -277,14 +313,13 @@ Forking the **GitHub** repository allows you to create a duplicate of a local re
 
 ### Colour Theme
 
-- [Dark Chocolate colour theme by kumakay](https://color.adobe.com/Dark-Chocolate-color-theme-302341/)
 - [Brown coffee chocolate beige theme by Elisa Cazzulo](https://color.adobe.com/de09e28a57de007f885d0c16d3e3-color-theme-12966174/)
 
 ### Project
 
 - [Blossom-Therapy-Insights blog](https://github.com/Indre-V/blossom-therapy)
 
-### Articles/recipes
+### Articles & Recipes
 
 - [Chocolate Orange and Lemon Mousse Dessert Cups](https://lilyobriens.ie/blog/post/chocolate-orange-and-lemon-mousse-dessert-cups)
 - [Frozen Hot Chocolate](https://www.tasteofhome.com/recipes/frozen-hot-chocolate/)
@@ -299,6 +334,10 @@ Forking the **GitHub** repository allows you to create a duplicate of a local re
 - [Coffee and Chocolate photo](https://www.pexels.com/photo/white-printer-paper-on-brown-textile-10254303/)
 - [Blog Letters on Brown Wood](https://www.pexels.com/photo/blog-letters-on-brown-wood-262508/)
 - [error 404](https://www.pexels.com/photo/error-404-27968632/)
+
+### Tools
+
+- [Abobe Colour](https://color.adobe.com/create/color-wheel)
 
 
 ## Acknowledgements
