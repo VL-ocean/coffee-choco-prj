@@ -169,9 +169,10 @@ Custom colours:
 
 ### Fonts
 
-'Playfair Display' (backup 'serif') was used as a main title font. It looks nice for titles and subtitles for posts.
-'Halant' (backup 'serif') was used as a sub-title font. It was rarely used but it also looks nice with the other two fonts.
-'Roboto' (backup 'serif') was used as a main text font. It is easy to read even if the text is small.
+- 'Playfair Display' (backup 'serif') was used as a main title font. It looks nice for titles and subtitles for posts.
+- 'Halant' (backup 'serif') was used as a sub-title font. It was rarely used but it also looks nice with the other two fonts.
+- 'Roboto' (backup 'serif') was used as a main text font. It is easy to read even if the text is small.
+
 
 ![Fonts](./README-images/fonts.png)
 
@@ -338,6 +339,7 @@ Forking the **GitHub** repository allows you to create a duplicate of a local re
 ### Tools
 
 - [Abobe Colour](https://color.adobe.com/create/color-wheel)
+- [FontJoy](https://fontjoy.com/)
 
 
 ## Acknowledgements

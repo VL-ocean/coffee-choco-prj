@@ -118,6 +118,7 @@ img.logo {
 .post-content h3 {
     text-align: center;
     padding-bottom: 8px;
+    font-family: var(--sub-title);
 }
 
 .post-content ul {
