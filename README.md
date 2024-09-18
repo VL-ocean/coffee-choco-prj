@@ -23,6 +23,11 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
     - [Structure \& Logical Flow](#structure--logical-flow)
     - [Colour Scheme](#colour-scheme)
     - [Fonts](#fonts)
+  - [Security Measures and Protective Design](#security-measures-and-protective-design)
+    - [User Authentication](#user-authentication)
+    - [Password Management](#password-management)
+    - [Form Validation](#form-validation)
+    - [Database Security](#database-security)
   - [Features](#features)
     - [Existing Features](#existing-features)
     - [Future Features](#future-features)
@@ -154,11 +159,42 @@ With an emphasis on delivering a seamless user experience, the goal of this proj
 
 #### Developer
 
+- As a developer I can use Agile so that I can deliver high quality product that meets the user needs
+- As a developer I can plan a database schema so that I can effectively store and manage blog data, ensuring optimal perfomance and flexibility
+- As a developer I can create visually engaging and responsive design so that users can easily navigate the site and access relevant information
+- As a developer I can create wireframes so that I can represent the layout and structure of the site
+- As a developer I can install and add basic configurations to Django so that I can create a working app
+- As a developer I can deploy to Heroku so that I can verify initial set up
+- As a developer I can ensure the quickly load of the platform and swifty respond to user interactions so that users can have a seamless experience
+- As a developer I can ensure that all syntax errors are identified and resolved during the code validation process so that the code is free from syntax-related issues
+- As a developer I can ensure that application meets performance and accessibility standards so that it provides a seamless experience for all users and performs optimally
+- As a developer I can ensure that user stories are thoroughly tested so that they meet acceptance criteria and deliver the expected functionality
+- As a developer I can deploy the application to Heroku so that it is accessible to users online
+- As a developer I can maintain thorough documentation so that the site is maintained seamlessly in future
+
 #### Site Visitor
+
+- As a Site Visitor I can view the Home page once the link has loaded so that I can understand the site purpose and use
+- As a Site Visitor I can sign up so that I can get access Registered User’s features
+- As a Site Visitor I can click on Blog nav item so that I can view posts (articles) to choose what to read
+- As a Site Visitor I can find 3 latest posts on Home page so that I can read them
 
 #### Registered User
 
+- As a Registered User I can log in using my username and password so that I can be authenticated in the system and use its features
+- As a Registered User I can create a post so that I can share my knowledge and experience or research outcome
+- As a Registered User I can update my post so that I can correct mistakes or add new information about the topic
+- As a Registered User I can delete my post so that I can remove it from the website in case it is irrelevant
+- As a Registered User I can click on my profile so that I can see all my posts
+- As a Registered User I can fill out the profile information so that other users can get to know me better
+- As a Registered User I can comment on a post so that I can join the discussion on the topic and express my opinion on the matter
+- As a Registered User I can delete my comment so that I can control my engagement on the platform
+
 #### Site Admin
+
+- As a Site Admin I can manage posts in the admin panel so that I can enrich the content, correct mistakes, remove incorrect or outdated posts
+- As a Site Admin I can ban and delete other user profile so that I can protect the site from troublemakers
+
 
 ## UX design
 
@@ -212,10 +248,11 @@ The original layouts look different from the finished blog as some changes were 
 </details>
 
 
-
 ### Structure & Logical Flow
 
-The database model diagram was designed using Lucidchart
+The database schema outlines the structure and relationships between key tables for the platform. The User table stores basic user information and authentication details. The Profile table extend user details with bio and profile image. The Post table manages user-generated content with fields for title, description, content, author, and metadata. The Comment table handles comments on posts, including author information. These tables are designed to ensure efficient data management and robust user interactions on the platform.
+
+The database model diagram was designed using Lucidchart:
 
 ![Screenshot of flowchart](./README-images/database-erd.png)
 
@@ -252,8 +289,37 @@ Custom colours:
 - 'Halant' (backup 'serif') was used as a sub-title font. It was rarely used but it also looks nice with the other two fonts.
 - 'Roboto' (backup 'serif') was used as a main text font. It is easy to read even if the text is small.
 
-
 ![Fonts](./README-images/fonts.png)
+
+
+### Responsiveness
+
+The website is responsive to different layouts depending on the size of the viewport based on the Bootstrap media queries.
+
+![media queries](./README-images/media-queries.png)
+
+
+## Security Measures and Protective Design
+
+### User Authentication
+
+- Django's LoginRequiredMixin is used to ensure that any requests to access secure pages by non-authenticated users are redirected to the login page.
+- Django's UserPassesTestMixin is used to limit access based on certain permissions, ensuring users can only edit/delete content they authored. If the user doesn't pass the test, they are shown an HTTP 403 Forbidden error.
+
+### Password Management
+
+- Use Django's built-in password management tools to ensure passwords are hashed and stored securely.
+- Enforce strong password policies to enhance user account security.
+
+### Form Validation
+
+- If incorrect or empty data is added to a form, the form won't submit, and a warning will appear to the user informing them which field raised the error.
+
+### Database Security
+
+- The database URL and secret key are stored in the env.py file to prevent unwanted connections to the database. This setup was implemented before the first push to GitHub.
+- Cross-Site Request Forgery (CSRF) tokens are used on all forms throughout the site to enhance security.
+
 
 ## Features
 
@@ -292,6 +358,9 @@ Custom colours:
 **Gunicorn**
 * Python HTTP server for WSGI applications.
 
+**WhiteNoise**
+* Designed to serve static files for Django applications.
+
 **Django RichTextField**
 * A Django model field and widget that renders a customizable rich text/WYSIWYG widget.
 
@@ -325,16 +394,9 @@ Custom colours:
 
 ## Testing
 
-Detailed testing of the site can be found at [TESTING.md](TESTING.md)
+The website underwent an extensive testing process to ensure its functionality, accessibility, and performance. This involved validating the code, assessing accessibility, conducting performance tests, performing cross-device testing, verifying browser compatibility, evaluating user stories, and incorporating user feedback to improve the overall user experience. 
 
-Testing includes the following:
-
-* Validator testing
-* Responsivness & Browser Compability Testing
-* Manual testing
-* Browser testing
-* Device testing
-* Bugs
+Testing summary and results can be found in [TESTING.md](TESTING.md) file.
 
 
 ## Deployment
