@@ -404,8 +404,8 @@ Testing summary and results can be found in [TESTING.md](TESTING.md) file.
 ### To deploy the project to Heroku
 
 Follow these steps to deploy your Django project to Heroku from VS Code:
-| ||
-| --- | --- |
+| |
+| --- |
 | **Step 1** Create a New Heroku App |
 | - Access the Heroku Dashboard: Log in to your Heroku account and access the dashboard. |
 | - Create a New App: Click on the New button in the top-right corner of the dashboard and select Create new app from the dropdown menu. |
