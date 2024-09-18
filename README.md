@@ -76,10 +76,89 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
 
 ### Agile Development Tool
 
+Agile methodology is a project management approach that emphasizes flexibility, collaboration, and iterative progress towards a well-defined goal. It is particularly effective in software development where requirements and solutions evolve through the collaborative effort of self-organizing cross-functional teams. Agile methodologies aim to deliver small, incremental changes in a product to improve quality and adaptability to changing needs.
 
+#### MoSCoW Prioritization
+
+The MoSCoW prioritization technique is used to determine the importance of various features and tasks in a project. This method categorizes features into four groups: Must Have, Should Have, Could Have, and Won't Have. This helps in effective time management and ensures that the most critical functionalities are delivered first.
+
+#### GitHub Projects
+
+Using GitHub Projects, tasks are managed and progress tracked through project boards. Each board represents status of the User Story (To Do, In Progress, Done, Future features). Issue labels include the user, prioritization and iterations (milestones).
+
+[Link to the project board](https://github.com/users/VL-ocean/projects/3/views/1) & [Link to the project table](https://github.com/users/VL-ocean/projects/3/views/2)
+
+<details>
+<summary>Iteration 1</summary>
+<hr>
+<b>Board</b>
+<img src="./README-images/iteration-1-board.png">
+<hr>
+<b>Table</b>
+<img src="./README-images/iteration-1-table.png">
+</details>
+
+<details>
+<summary>Iteration 2</summary>
+<hr>
+<b>Board</b>
+<img src="./README-images/iteration-2-board.png">
+<hr>
+<b>Table</b>
+<img src="./README-images/iteration-2-table.png">
+</details>
+
+<details>
+<summary>Iteration 3</summary>
+<hr>
+<b>Board</b>
+<img src="./README-images/iteration-3-board.png">
+<hr>
+<b>Table</b>
+<img src="./README-images/iteration-3-table.png">
+</details>
+
+<details>
+<summary>Iteration 4</summary>
+<hr>
+<b>Board</b>
+<img src="./README-images/iteration-4-board.png">
+<hr>
+<b>Table</b>
+<img src="./README-images/iteration-4-table.png">
+</details>
+
+<details>
+<summary>Milestones Progress</summary>
+<hr>
+<b>Overall view</b>
+<img src="./README-images/milestone-progress.png">
+<hr>
+<b>The completed milestones are closed</b>
+<img src="./README-images/1-2-milestones-closed.png">
+<hr>
+<b>The milestones to complete are in open status</b>
+<img src="./README-images/3-4-milestones-in-progress.png">
+</details>
+
+<details>
+<summary>Issue sample (iteration 2)</summary>
+<hr>
+<b>Issue Sample</b>
+<img src="./README-images/issue-sample-iter-2.png">
+</details>
 
 ### User Stories
 
+With an emphasis on delivering a seamless user experience, the goal of this project is to provide a comprehensive platform that serves both visitors and registered users. The platform will allow for the development and maintenance of content, present developer profiles, and provide opportunities for interaction. The following user stories outline the essential functionalities and the rationale behind them.
+
+#### Developer
+
+#### Site Visitor
+
+#### Registered User
+
+#### Site Admin
 
 ## UX design
 
