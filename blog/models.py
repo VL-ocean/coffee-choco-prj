@@ -16,8 +16,16 @@ class Post(models.Model):
     A model to create and manage posts
     """
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_owner")
-    title = models.CharField(max_length=300, unique=True, null=False, blank=False)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+        related_name="post_owner"
+    )
+    title = models.CharField(
+        max_length=300,
+        unique=True,
+        null=False,
+        blank=False
+    )
     description = models.CharField(max_length=500, null=False, blank=False)
     content = RichTextField(max_length=30000, null=False, blank=False)
     image = ResizedImageField(
@@ -44,10 +52,18 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    A model to create and manage comments
+    """
+
     post = models.ForeignKey(
-        Post, on_delete=models.CASCADE, related_name="comments")
+        Post,
+        on_delete=models.CASCADE,
+        related_name="comments"
+    )
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="comment_owner")
+        User, on_delete=models.CASCADE, related_name="comment_owner"
+    )
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -22,7 +22,12 @@ class Profiles(TemplateView):
         return context
 
 
-class EditProfile(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+class EditProfile(
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    SuccessMessageMixin,
+    UpdateView
+):
     """Edit a profile"""
 
     model = Profile

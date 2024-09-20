@@ -11,7 +11,11 @@ from django_resized import ResizedImageField
 class Profile(models.Model):
     """Profile model"""
 
-    user = models.ForeignKey(User, related_name="profile", on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User,
+        related_name="profile",
+        on_delete=models.CASCADE
+    )
     image = ResizedImageField(
         size=None,
         quality=100,
@@ -29,4 +33,4 @@ class Profile(models.Model):
 def create_user_profile(instance, created, **kwargs):
     """Create or update the user profile"""
     if created:
-        Profile.objects.create(user=instance, image='profiles/default')
+        Profile.objects.create(user=instance, image="profiles/default")

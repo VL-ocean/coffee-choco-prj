@@ -30,7 +30,10 @@ class Posts(ListView):
     context_object_name = "posts"
     paginate_by = 6
 
-    queryset = Post.objects.filter(status=1, approved=True).order_by("-created_at")
+    queryset = Post.objects.filter(
+        status=1,
+        approved=True
+    ).order_by("-created_at")
 
     def get_queryset(self, **kwargs):
         query = self.request.GET.get("q")
@@ -45,7 +48,10 @@ class Posts(ListView):
                 approved=True,
             )
         else:
-            posts = self.model.objects.filter(status=1, approved=True).order_by(
+            posts = self.model.objects.filter(
+                status=1,
+                approved=True
+            ).order_by(
                 "-created_at"
             )
         return posts

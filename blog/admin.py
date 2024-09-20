@@ -7,6 +7,7 @@ class PostAdmin(admin.ModelAdmin):
     """
     Allows admin to manage posts via the admin panel
     """
+
     list_display = (
         "title",
         "description",
@@ -32,12 +33,12 @@ class CommentAdmin(admin.ModelAdmin):
     """
     Allows admin to manage comments via the admin panel
     """
+
     list_display = (
         "user",
         "body",
         "created_at",
         "approved",
-
     )
     search_fields = ["body", "user", "post"]
     list_filter = (

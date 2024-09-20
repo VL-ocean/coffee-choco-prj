@@ -79,3 +79,50 @@ The [W3C Jigsaw](https://jigsaw.w3.org/css-validator/#validate_by_input) tool, p
 | --- | --- | --- | --- |
 | base.css | ✅ | No errors. Two warnings. First, due to imported Google Fonts: "Imported style sheets are not checked in direct input and file upload modes". Second, due to variables used to assign some fonts and colours: "Due to their dynamic nature, CSS variables are currently not statically checked" | ![css](./README-images/css-validation.png) |
 
+### JavaScript
+
+No major errors were found when validating JavaScript through [Jshint](https://jshint.com/).
+
+Jshint noted that bootstrap and tooltipList variables are undefined. This can be ignored because they rely on bootstrap javascript.
+
+![jshint](./README-images/jshint-validation.png)
+
+### Python
+
+The python files have all been passed through [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+<details><summary><b>Test Results</b></summary>
+
+| **File name** | **Pass** | **Result** |
+| --- | --- | --- |
+|  |  | **Blog App** |
+| admin.py | ✅ | ![Result](./README-images/blog-admin-py.png) |
+| apps.py | ✅ | ![Result](./README-images/blog-apps-py.png) |
+| forms.py | ✅ | ![Result](./README-images/blog-forms-py.png) |
+| models.py | ✅ | ![Result](./README-images/blog-models-py.png) |
+| urls.py | ✅ | ![Result](./README-images/blog-urls-py.png) |
+| views.py | ✅ | ![Result](./README-images/blog-views-py.png) |
+|  |  | **Coffee_Choco App** |
+| asgi.py | ✅ | ![Result](./README-images/main-asgi-py.png) |
+| settings.py | ✅ | ![Result](./README-images/main-settings-py.png) |
+| urls.py | ✅ | ![Result](./README-images/main-urls-py.png) |
+| wsgi.py | ✅ | ![Result](./README-images/main-wsgi-py.png) |
+|  |  | **Home App** |
+| apps.py | ✅ | ![Result](./README-images/home-apps-py.png) |
+| urls.py | ✅ | ![Result](./README-images/home-urls-py.png) |
+| views.py | ✅ | ![Result](./README-images/home-views-py.png) |
+|  |  | **Profiles App** |
+| admin.py | ✅ | ![Result](./README-images/profiles-admin-py.png) |
+| apps.py | ✅ | ![Result](./README-images/profiles-apps-py.png) |
+| forms.py | ✅ | ![Result](./README-images/profiles-forms-py.png) |
+| models.py | ✅ | ![Result](./README-images/profiles-models-py.png) |
+| urls.py | ✅ | ![Result](./README-images/profiles-urls-py.png) |
+| views.py | ✅ | ![Result](./README-images/profiles-views-py.png) |
+
+</details><br/>
+
+
+## Manual Testing
+
+Extensive manual testing was performed on the application. Each feature was verified against success criteria. Where applicable, negative testing was conducted by providing invalid or unexpected inputs to assess the application's robustness in handling errors and exceptions.
+

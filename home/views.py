@@ -9,7 +9,7 @@ class Index(ListView):
     context_object_name = 'posts'
 
     queryset = Post.objects.filter(
-        status=1, approved=True).order_by('-created_at')    
+        status=1, approved=True).order_by('-created_at')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
