@@ -22,6 +22,21 @@
 
 ## Responsiveness Tests
 
+The mobile-first strategy was used when developing the website. The project has been deployed at early stage to ensure best layout and effective testing. The DevTools were used during development and [Responsive Design Checker](https://responsivedesignchecker.com/ "Responsive Design Checker") along with [Am I Responsive](https://ui.dev/amiresponsive "Am I responsive") for testing.
+
+| **Size** | **Device** | **Screenshot** | **Result** |
+| --- | --- | --- | --- |
+| 360 x 740  | Samsung Galaxy S8+ | <details><summary>View</summary>![screenshot](./README-images/samsung-galaxy-s8.png)</details> | ✅ |
+| 414 x 896  | iPhone XR | <details><summary>View</summary>![screenshot](./README-images/iphone-xr.png)</details> | ✅ |
+| 430 x 932  | iPhone 14 Pro Max | <details><summary>View</summary>![screenshot](./README-images/iphone-14.png)</details> | ✅ |
+| 768 x 1024  | iPad Mini | <details><summary>View</summary>![screenshot](./README-images/ipad-mini.png)</details> | ✅ |
+| 853 x 1280  | Asus Zenbook Fold | <details><summary>View</summary>![screenshot](./README-images/asus-zenbook.png)</details> | ✅ |
+| 912 x 1368  | Surface Pro 7 | <details><summary>View</summary>![screenshot](./README-images/surface-pro-7.png)</details> | ✅ |
+| 1024 x 1366  | iPad Pro | <details><summary>View</summary>![screenshot](./README-images/ipad-pro.png)</details> | ✅ |
+| 1440 x 900  | Desktop | <details><summary>View</summary>![screenshot](./README-images/1440-sample.png)</details> | ✅ |
+| 1680 x 1050  | Desktop | <details><summary>View</summary>![screenshot](./README-images/1680-sample.png)</details> | ✅ |
+| 1920 x 1080  | Desktop | <details><summary>View</summary>![screenshot](./README-images/1920-sample.png)</details> | ✅ |
+
 
 ## Code Validation
 
@@ -188,3 +203,40 @@ Extensive manual testing was performed on the application. Each feature was veri
 | View my post to edit or delete it | Post card in profile | Click on post card in your profile | The user is navigated to the post detail view. The post author can access edit and delete buttons to work on the post.  | ✅ |
 
 </details><br/>
+
+
+## Role-based Restrictions
+
+The user role based restrictions were tested to ensure that view and functionality reflects the scope of the project.
+
+- ### **Admin**
+
+| **Functionality** | **Result** |
+| --- | --- |
+| Full access to all resources and features | ✅ |
+| CRUD on all elements | ✅ |
+| Manage user roles and restrictions | ✅ |
+| Access to admin dashboard and settings | ✅ |
+
+- ### **Registered User**
+
+| **Functionality** | **Result** |
+| --- | --- |
+| CRUD on their own content (post) | ✅ |
+| No access to change another user's content | ✅ |
+| Create and delete comments | ✅ |
+| Update profile | ✅ |
+| Read all published and approved posts | ✅ |
+| Read all approved comments | ✅ |
+| View another user's profile (if shared a link) | ✅ |
+
+- ### **Visitor**
+
+| **Functionality** | **Result** |
+| --- | --- |
+| View published and approved content (post) | ✅ |
+| No CRUD on any elements | ✅ |
+| No access to view another user's profile | ✅ |
+
+
+## Bugs

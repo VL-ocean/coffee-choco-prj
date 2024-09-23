@@ -5,7 +5,7 @@
 
 Coffee & Chocolate blog is a blog style website for those who love coffee and chocolate. Here users can find articles and recipes as well as post their own. A comments section facilitates communication between users. Only registered users can create new posts, comment and give likes, save favourite recipes or articles to read later. 
 
-![start screen responsive](./README-images/)
+![start screen responsive](./README-images/main-responsive.png)
 
 
 ## Table of contents
@@ -23,6 +23,7 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
     - [Structure \& Logical Flow](#structure--logical-flow)
     - [Colour Scheme](#colour-scheme)
     - [Fonts](#fonts)
+    - [Responsiveness (media queries)](#responsiveness)
   - [Security Measures and Protective Design](#security-measures-and-protective-design)
     - [User Authentication](#user-authentication)
     - [Password Management](#password-management)
