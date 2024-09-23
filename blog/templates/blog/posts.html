@@ -7,7 +7,8 @@
 {% block content %}
 
 <div class="container my-3">
-    <h1 class="text-center p-2">
+    {% if posts %}
+    <h1 class="text-center p-2 d-none">
         Newest Posts
     </h1>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -28,6 +29,11 @@
         </a>
         {% endfor %}
     </div>
+    {% else %}
+    <div class="text-center p-3 mx-2 mt-4 bg-light rounded justify-content-center align-content-center">
+        <p class="text-body-secondary m-0">No matching results</p>
+    </div>
+    {% endif %}
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center my-3">
