@@ -126,3 +126,11 @@ The python files have all been passed through [CI Python Linter](https://pep8ci.
 
 Extensive manual testing was performed on the application. Each feature was verified against success criteria. Where applicable, negative testing was conducted by providing invalid or unexpected inputs to assess the application's robustness in handling errors and exceptions.
 
+<details><summary><b>Manual Testing Results</b></summary>
+
+| **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
+| --- | --- | --- | --- | --- |
+| **Blog App** |  |  |  |  |
+|  |  |  |  | ✅ |
+
+</details><br/>

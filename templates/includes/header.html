@@ -1,56 +1,58 @@
 {% load static %}
 
 <header>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand mb-2" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}"
-                    alt="Coffee & Chocolate Logo" class="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navigation items -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == blog_url %}active{% endif %}"
-                            href="{% url 'blog' %}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == addpost_url %}active{% endif %}"
-                            href="{% url 'add_post' %}">New Post</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == profile_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'profile' request.user.id %}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
-                <!-- Form for search bar -->
-                <form class="d-flex mb-2" role="search" method="GET" action="{% url 'blog' %}">
-                    <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-dark" type="submit">Search</button>
-                </form>
+    {% with request.resolver_match.url_name as url_name %}
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand mb-2" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}"
+                        alt="Coffee & Chocolate Logo" class="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navigation items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == blog_url %}active{% endif %}"
+                                href="{% url 'blog' %}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == addpost_url %}active{% endif %}"
+                                href="{% url 'add_post' %}">New Post</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"></li>
+                            <a class="nav-link {% if url_name == 'profile' %}active{% endif %}" aria-current="page"
+                                href="{% url 'profile' request.user.id %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <!-- Form for search bar -->
+                    <form class="d-flex mb-2" role="search" method="GET" action="{% url 'blog' %}">
+                        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    {% endwith %}
 </header>
