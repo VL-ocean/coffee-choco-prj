@@ -498,12 +498,20 @@ Forking the **GitHub** repository allows you to create a duplicate of a local re
 - [Chocolate Valentine’s Truffles](https://lilyobriens.ie/blog/post/chocolate-valentine%E2%80%99s-truffles-2023)
 - [Your Ultimate Guide to Different Types of Coffee](https://www.tasteofhome.com/article/types-of-coffee/)
 - [How the world came to run on coffee By David Robson](https://www.bbc.com/future/bespoke/made-on-earth/how-the-world-came-to-run-on-coffee/)
+- [Coffee and Your Health: The Good and the Bad By Leo Bear-McGuinness](https://www.technologynetworks.com/applied-sciences/articles/coffee-and-your-health-the-good-and-the-bad-384404)
+- [Brookies Recipe from Good Food magazine, Christmas 2020](https://www.bbcgoodfood.com/recipes/brookies)
+- [What Makes Coffee Organic](https://coffee.org/blogs/news/what-makes-coffee-organic-1)
 
 ### Media
 
 - [Coffee and Chocolate photo](https://www.pexels.com/photo/white-printer-paper-on-brown-textile-10254303/)
 - [Blog Letters on Brown Wood](https://www.pexels.com/photo/blog-letters-on-brown-wood-262508/)
 - [error 404](https://www.pexels.com/photo/error-404-27968632/)
+- [Coffee Beans](https://www.pexels.com/photo/coffee-beans-1695052/)
+- [Coffee Beans and White Mug](https://www.pexels.com/photo/coffee-beans-and-white-mug-606545/)
+- [Shallow Focus Photo of Coffee Beans](https://www.pexels.com/photo/shallow-focus-photo-of-coffee-beans-894695/)
+- [Man in White Dress Shirt Holding Suit Jacket](https://www.pexels.com/photo/man-in-white-dress-shirt-holding-suit-jacket-1043474/)
+- [Joyful woman in stylish maxi dress resting near old tree](https://www.pexels.com/photo/joyful-woman-in-stylish-maxi-dress-resting-near-old-tree-5121620/)
 
 ### Tools
 
