@@ -11,7 +11,6 @@
   * [CSS](#css)
   * [JavaScript](#javascript)
   * [Python](#python)
-  * [Python (Unit Testing)](#python--unit-testing-)
 - [Lighthouse Testing](#lighthouse-testing)
 - [Accessibility Testing](#accessibility-testing)
 - [Manual Testing](#manual-testing)
@@ -25,7 +24,7 @@
 The mobile-first strategy was used when developing the website. The project has been deployed at early stage to ensure best layout and effective testing. The DevTools were used during development and [Responsive Design Checker](https://responsivedesignchecker.com/ "Responsive Design Checker") along with [Am I Responsive](https://ui.dev/amiresponsive "Am I responsive") for testing.
 
 | **Size** | **Device** | **Screenshot** | **Result** |
-| --- | --- | --- | --- |
+| --- | --- | --- | :---: |
 | 360 x 740  | Samsung Galaxy S8+ | <details><summary>View</summary>![screenshot](./README-images/samsung-galaxy-s8.png)</details> | ✅ |
 | 414 x 896  | iPhone XR | <details><summary>View</summary>![screenshot](./README-images/iphone-xr.png)</details> | ✅ |
 | 430 x 932  | iPhone 14 Pro Max | <details><summary>View</summary>![screenshot](./README-images/iphone-14.png)</details> | ✅ |
@@ -43,7 +42,7 @@ The mobile-first strategy was used when developing the website. The project has 
 The deployed project was tested on the most popular browsers for compatibility issues.
 
 | Browser | Notes | Result |
-| --- | --- | --- |
+| --- | --- | :---: |
 | Chrome | No issues identified | ✅ |
 | Opera | No issues identified | ✅ |
 | Firefox | No issues identified | ✅ |
@@ -121,7 +120,7 @@ The python files have all been passed through [CI Python Linter](https://pep8ci.
 <details><summary><b>Test Results</b></summary>
 
 | **File name** | **Pass** | **Result** |
-| --- | --- | --- |
+| --- | --- | :---: |
 |  |  | **Blog App** |
 | admin.py | ✅ | ![Result](./README-images/blog-admin-py.png) |
 | forms.py | ✅ | ![Result](./README-images/blog-forms-py.png) |
@@ -220,7 +219,7 @@ Extensive manual testing was performed on the application. Each feature was veri
 <details><summary><b>Manual Testing Results</b></summary>
 
 | **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | :---: |
 | **Header** |  |  |  |  |
 | Logo link | Logo image | Click on the Logo | The user is navigated to the home page | ✅ |
 | Home link | Home navigation item | Click on 'Home' | The user is navigated to the Home page | ✅ |
@@ -288,7 +287,7 @@ The user role based restrictions were tested to ensure that view and functionali
 - ### **Admin**
 
 | **Functionality** | **Result** |
-| --- | --- |
+| --- | :---: |
 | Full access to all resources and features | ✅ |
 | CRUD on all elements | ✅ |
 | Manage user roles and restrictions | ✅ |
@@ -297,7 +296,7 @@ The user role based restrictions were tested to ensure that view and functionali
 - ### **Registered User**
 
 | **Functionality** | **Result** |
-| --- | --- |
+| --- | :---: |
 | CRUD on their own content (post) | ✅ |
 | No access to change another user's content | ✅ |
 | Create and delete comments | ✅ |
@@ -309,7 +308,7 @@ The user role based restrictions were tested to ensure that view and functionali
 - ### **Visitor**
 
 | **Functionality** | **Result** |
-| --- | --- |
+| --- | :---: |
 | View published and approved content (post) | ✅ |
 | No CRUD on any elements | ✅ |
 | No access to view another user's profile | ✅ |
@@ -317,13 +316,59 @@ The user role based restrictions were tested to ensure that view and functionali
 
 ## User Story Testing
 
+- ### **Developer User Stories**
 
+| **User Story** | **Notes** | **Acceptance Criteria Complete** |
+| --- | --- | :---: |
+| [Agile Methodology](https://github.com/VL-ocean/coffee-choco-prj/issues/36) | Documented in README.md, section [Agile Development Tool](https://github.com/VL-ocean/coffee-choco-prj#agile-development-tool) | ✅ |
+| [Design Database Schema](https://github.com/VL-ocean/coffee-choco-prj/issues/37) | Documented in README.md, section [Structure & Logical Flow](https://github.com/VL-ocean/coffee-choco-prj#structure--logical-flow) | ✅ |
+| [Design](https://github.com/VL-ocean/coffee-choco-prj/issues/39) | Documented in README.md, section [UX Design](https://github.com/VL-ocean/coffee-choco-prj?tab=readme-ov-file#ux-design) | ✅ |
+| [Create wireframes](https://github.com/VL-ocean/coffee-choco-prj/issues/38) | Documented in README.md, section [Wireframe](https://github.com/VL-ocean/coffee-choco-prj#wireframe) | ✅ |
+| [Create Django Project](https://github.com/VL-ocean/coffee-choco-prj/issues/40) | Git commit [025e597](https://github.com/VL-ocean/coffee-choco-prj/commit/025e597f5c0c674f28bffdce01c5cb0efd4968bf) | ✅ |
+| [Initial Deployment to Heroku](https://github.com/VL-ocean/coffee-choco-prj/issues/41) | Git commit [d3c49de](https://github.com/VL-ocean/coffee-choco-prj/commit/d3c49de5da7d0fbaa31e5acf6b05414f54618266) | ✅ |
+| [Performance Optimization](https://github.com/VL-ocean/coffee-choco-prj/issues/42) | Completed during development | ✅ |
+| [Code Validation](https://github.com/VL-ocean/coffee-choco-prj/issues/43) | Documented in TESTING.md, section [Code Validation](https://github.com/VL-ocean/coffee-choco-prj/blob/main/TESTING.md#code-validation) | ✅ |
+| [Performance and Accessibility Testing](https://github.com/VL-ocean/coffee-choco-prj/issues/44) | Documented in TESTING.md, section [Lighthouse Testing](https://github.com/VL-ocean/coffee-choco-prj/blob/main/TESTING.md#lighthouse-testing) and [Accessibility Testing](https://github.com/VL-ocean/coffee-choco-prj/blob/main/TESTING.md#accessibility-testing) | ✅ |
+| [User Story Testing](https://github.com/VL-ocean/coffee-choco-prj/issues/46) | Documented in TESTING.md, section [User Story Testing](https://github.com/VL-ocean/coffee-choco-prj/blob/main/TESTING.md#user-story-testing) | ✅ |
+| [Final Heroku Deployment](https://github.com/VL-ocean/coffee-choco-prj/issues/45) | Git commit [cd8ce2d](https://github.com/VL-ocean/coffee-choco-prj/commit/cd8ce2d9e1ad450c403b08fe72aa31dddc263fcb) | ✅ |
+| [Comprehensive Project Documentation](https://github.com/VL-ocean/coffee-choco-prj/issues/47) | Comprehensive [README.md](https://github.com/VL-ocean/coffee-choco-prj/blob/main/README.md) and [TESTING.md](https://github.com/VL-ocean/coffee-choco-prj/blob/main/TESTING.md) | ✅ |
+
+- ### **Visitor User Stories**
+
+| **User Story** | **Notes** | **Acceptance Criteria Complete** |
+| --- | --- | :---: |
+| [View Home page](https://github.com/VL-ocean/coffee-choco-prj/issues/1) | Git commit [283d410](https://github.com/VL-ocean/coffee-choco-prj/commit/283d4103d359362307b1a1c310f19e0268f18181) | ✅ |
+| [Sign Up feature](https://github.com/VL-ocean/coffee-choco-prj/issues/5) | Git commit [5272dbe](https://github.com/VL-ocean/coffee-choco-prj/commit/5272dbeddb9389abcb43899e51b0861f7e14255e) | ✅ |
+| [View blog posts (paginated)](https://github.com/VL-ocean/coffee-choco-prj/issues/3) | Git commit [0968a62](https://github.com/VL-ocean/coffee-choco-prj/commit/0968a62296f5ca45efcf085c72f8c988e999ea10) | ✅ |
+| [View latest posts on home page](https://github.com/VL-ocean/coffee-choco-prj/issues/2) | Git commit [283d410](https://github.com/VL-ocean/coffee-choco-prj/commit/283d4103d359362307b1a1c310f19e0268f18181) | ✅ |
+
+- ### **Registered user User Stories**
+
+| **User Story** | **Notes** | **Acceptance Criteria Complete** |
+| --- | --- | :---: |
+| [Login and Logout Features](https://github.com/VL-ocean/coffee-choco-prj/issues/6) | Git commit [5272dbe](https://github.com/VL-ocean/coffee-choco-prj/commit/5272dbeddb9389abcb43899e51b0861f7e14255e) | ✅ |
+| [View blog posts (paginated)](https://github.com/VL-ocean/coffee-choco-prj/issues/3) | Git commit [0968a62](https://github.com/VL-ocean/coffee-choco-prj/commit/0968a62296f5ca45efcf085c72f8c988e999ea10) | ✅ |
+| [View latest posts on home page](https://github.com/VL-ocean/coffee-choco-prj/issues/2) | Git commit [283d410](https://github.com/VL-ocean/coffee-choco-prj/commit/283d4103d359362307b1a1c310f19e0268f18181) | ✅ |
+| [Create a recipe/article](https://github.com/VL-ocean/coffee-choco-prj/issues/18) | Git commit [faa091b](https://github.com/VL-ocean/coffee-choco-prj/commit/faa091b1cdf105a2dbea2d74e7db7e201726cce1) | ✅ |
+| [Update my recipe/article](https://github.com/VL-ocean/coffee-choco-prj/issues/19) | Git commit [eec45ea](https://github.com/VL-ocean/coffee-choco-prj/commit/eec45ea97054f227eef7c73d900487492a6f6420) | ✅ |
+| [Delete my recipe/article](https://github.com/VL-ocean/coffee-choco-prj/issues/21) | Git commit [4219837](https://github.com/VL-ocean/coffee-choco-prj/commit/4219837db4e89511934a618815f566b5b2d15997) | ✅ |
+| [View my posts in my profile](https://github.com/VL-ocean/coffee-choco-prj/issues/28) | Git commit [8bbee41](https://github.com/VL-ocean/coffee-choco-prj/commit/8bbee4118cfa7cbf22a9a78a3c6b1ea96ed5ccaf#diff-48fde33dc780b3ac8ed737a0b65e3257ff526510e7ec5a7755ac04208bccb6d5) | ✅ |
+| [Fill out / Update profile info](https://github.com/VL-ocean/coffee-choco-prj/issues/25) | Git commit [922402d](https://github.com/VL-ocean/coffee-choco-prj/commit/922402df8a94e93e90e58f81cd49d624c04734d6#diff-24d82cf2552dbb8559c90d6d4f0481d348c26a9ab90ef850c18af2b87e5098b1) | ✅ |
+| [Add comment](https://github.com/VL-ocean/coffee-choco-prj/issues/13) | Git commit [b1ee1c4](https://github.com/VL-ocean/coffee-choco-prj/commit/b1ee1c465c8d06e298b16ae8687be6e243909b22) | ✅ |
+| [Delete comment](https://github.com/VL-ocean/coffee-choco-prj/issues/16) | Git commit [7e06c84](https://github.com/VL-ocean/coffee-choco-prj/commit/7e06c843217010bb177b9cba97b415d825a5d62f) | ✅ |
+
+- ### **Site Admin User Stories**
+
+| **User Story** | **Notes** | **Acceptance Criteria Complete** |
+| --- | --- | :---: |
+| [Manage posts in admin panel](https://github.com/VL-ocean/coffee-choco-prj/issues/31) | Git commit [2b69960](https://github.com/VL-ocean/coffee-choco-prj/commit/2b699600c51aeddf0b4fdf571a913c554d3aa75d) | ✅ |
+| [Admin can delete user and their profile](https://github.com/VL-ocean/coffee-choco-prj/issues/34) | Git commit [922402d](https://github.com/VL-ocean/coffee-choco-prj/commit/922402df8a94e93e90e58f81cd49d624c04734d6#diff-a58172ae21173b7558fc0c745dd69b2abf2c2359635dbd32f6aecb74e6c6874c) | ✅ |
 
 
 ## Bugs
 
 | **Description** | **Solution** | **Status** | **Notes** |
-| --- | --- | --- | --- |
+| --- | --- | :---: | --- |
 | 'Profile' navigation item does not become active when the Profile page is opened | In header.html use 'request.resolver_match.url_name' to compare the opened url with the url name in [profiles/urls.py]. Once it matches, the active class is applied to the navigation item | ✅ | Resolved with git commit beb22da |
 | When searching a word that is not found in any blog posts, the posts.html renders the title 'Newst Posts' with no posts in it. It does not indicate that the match was not found | In posts.html added if statement to check whether 'posts' variable has anything inside. If it is empty, then the message 'No matching results' is displayed to the user | ✅ | Resolved with git commit beb22da |
 | 'Add Comment' Form can be submitted empty | In post_detail.html add 'required' attribute to the textarea of the comment body. So that the form cannot be submitted empty on the frontend | ✅ | Resolved with git commit ff9ee1b |
