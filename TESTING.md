@@ -72,7 +72,7 @@ Notes:
 <summary>HTML Validation Results</summary>
 
 | **File name** | **Pass** | **Notes** | **Result** |
-| --- | --- | --- | --- |
+| --- | :---: | --- | --- |
 | **Blog App** |  |  |  |
 | add_post.html | ✅ | No errors or warnings to show | ![add_post](./README-images/add-post.png) |
 | comment_confirm_delete.html | ✅ | No errors or warnings to show | ![comment_confirm_delete](./README-images/comment-confirm-delete.png) |
@@ -102,7 +102,7 @@ The [W3C Jigsaw](https://jigsaw.w3.org/css-validator/#validate_by_input) tool, p
 
 
 | **File name** | **Pass** | **Notes** | **Result** |
-| --- | --- | --- | --- |
+| --- | :---: | --- | --- |
 | base.css | ✅ | No errors. Two warnings. First, due to imported Google Fonts: "Imported style sheets are not checked in direct input and file upload modes". Second, due to variables used to assign some fonts and colours: "Due to their dynamic nature, CSS variables are currently not statically checked" | ![css](./README-images/css-validation.png) |
 
 ### JavaScript
@@ -120,7 +120,7 @@ The python files have all been passed through [CI Python Linter](https://pep8ci.
 <details><summary><b>Test Results</b></summary>
 
 | **File name** | **Pass** | **Result** |
-| --- | --- | :---: |
+| --- | :---: | :---: |
 |  |  | **Blog App** |
 | admin.py | ✅ | ![Result](./README-images/blog-admin-py.png) |
 | forms.py | ✅ | ![Result](./README-images/blog-forms-py.png) |
@@ -216,11 +216,10 @@ Unfortunately, it cannot evaluate the website from the registered user's view, d
 
 Extensive manual testing was performed on the application. Each feature was verified against success criteria. Where applicable, negative testing was conducted by providing invalid or unexpected inputs to assess the application's robustness in handling errors and exceptions.
 
-<details><summary><b>Manual Testing Results</b></summary>
+<details><summary><b>Header</b></summary>
 
 | **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
 | --- | --- | --- | --- | :---: |
-| **Header** |  |  |  |  |
 | Logo link | Logo image | Click on the Logo | The user is navigated to the home page | ✅ |
 | Home link | Home navigation item | Click on 'Home' | The user is navigated to the Home page | ✅ |
 | Blog link | Blog navigation item | Click on 'Blog' | The user is navigated to the Blog page | ✅ |
@@ -229,21 +228,45 @@ Extensive manual testing was performed on the application. Each feature was veri
 | Login link | Login navigation item | Click on 'Login' | The user is navigated to the Login page | ✅ |
 | Profile link | Profile navigation item | Click on 'Profile' | The user is navigated to his Profile page. The link is only available for registered users. Registered users can see each other's profiles. It is not restricted. More details in Feature Features section | ✅ |
 | Logout link | Logout navigation item | Click on 'Logout' | The user is navigated to the Logout confirmation page. Only registered users can access Logout link | ✅ |
-| **Search bar** |  |  |  |  |
+
+</details><br/>
+
+<details><summary><b>Search bar</b></summary>
+
+| **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
+| --- | --- | --- | --- | :---: |
 | Empty search | Search button | Click on 'Search' button | The user is navigated to the Blog page. Since the input was empty, all posts are displayed on the page | ✅ |
 | Search available keyword | Search bar | Enter 'coffee', click on 'Search' button | The user is navigated to the Blog page. The posts, which include the keyword 'coffee' in either title, description or content are displayed on the page | ✅ |
 | Search unavailable keyword | Search bar | Enter 'ndkghf', click on 'Search' button | The user is navigated to the Blog page. The message 'No matching results' is displayed on the page | ✅ |
-| **Footer** |  |  |  |  |
+
+</details><br/>
+
+<details><summary><b>Footer</b></summary>
+
+| **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
+| --- | --- | --- | --- | :---: |
 | LinkedIn link | LinkedIn icon | Click on 'LinkedIn' icon | The LinkedIn website is opened in a separate tab | ✅ |
 | Facebook link | Facebook icon | Click on 'Facebook' icon | The Facebook website is opened in a separate tab | ✅ |
 | Instagram link | Instagram icon | Click on 'Instagram' icon | The Instagram website is opened in a separate tab | ✅ |
 | Twitter link | Twitter icon | Click on 'Twitter' icon | The Twitter website is opened in a separate tab | ✅ |
 | YouTube link | YouTube icon | Click on 'YouTube' icon | The YouTube website is opened in a separate tab | ✅ |
-| **Home App** |  |  |  |  |
+
+</details><br/>
+
+<details><summary><b>Home App</b></summary>
+
+| **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
+| --- | --- | --- | --- | :---: |
 | Display hero image and welcome text | Home page | Navigate through Logo or 'Home' navigation item | The Home page displays the hero image with welcome text on it. The purpose of the website is clearly visible and the text is easy to read | ✅ |
 | Display the latest posts (3) | 'Latest Posts' section | Navigate through Logo or 'Home' navigation item | Beneath the hero image the user can find three latest posts (published and approved posts only) | ✅ |
 | View any latest post to read | Latest Post card | Click on the post card on the Home page | The user is navigated to the post detail view | ✅ |
-| **Blog App** |  |  |  |  |
+
+</details><br/>
+
+<details><summary><b>Blog App</b></summary>
+
+| **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
+| --- | --- | --- | --- | :---: |
 | View paginated list of posts | Blog page | Navigate through 'Blog' navigation item | The approved and published posts are displayed by 6, with pagination. Sorted by the date | ✅ |
 | View next page of posts | 'Next' button | Click on 'Next' button | The user is navigated to the next page | ✅ |
 | View previous page of posts | 'Previous' button | Click on 'Previous' button | The user is navigated to the previous page | ✅ |
@@ -251,7 +274,13 @@ Extensive manual testing was performed on the application. Each feature was veri
 | View last page of posts | 'Last' button | Click on 'Last' button | The user is navigated to the last page | ✅ |
 | View 2-nd page of posts | '2' page button | Click on '2' page button | The user is navigated to the 2-nd page | ✅ |
 | View a post to read | Post card | Click on the post card | The user is navigated to the post detail view | ✅ |
-| **Post CRUD** |  |  |  |  |
+
+</details><br/>
+
+<details><summary><b>Post CRUD</b></summary>
+
+| **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
+| --- | --- | --- | --- | :---: |
 | 'Add Post' link | 'Add Post' navigation item | Click on 'Add Post' | The user is navigated to the Add Post page with the form. Only registered users have access to the form | ✅ |
 | 'Add Post' Form validation | 'Add Post' Form | Leave some fields empty | The error message is displayed. The user is asked to fill in the empty fields | ✅ |
 | 'Create Post' Form action | 'Create Post' button in 'Add Post' Form | After filling out all the fields correctly, click on 'Create Post' button under the form | The user is navigated to the Blog page. The post has been created. If the Post status is 'published', then it is awaiting approval. The user can find it in his profile with the message 'awaiting approval' displayed. If the Post status is 'draft', it can be found in user profile for further editing | ✅ |
@@ -261,7 +290,13 @@ Extensive manual testing was performed on the application. Each feature was veri
 | 'Delete' link | 'Delete' button under the post | Click on 'Delete' button under your post | The user is navigated to the delete post confirmation. Only the post author has access to the button and can confirm deletion | ✅ |
 | Deletion confirmation | 'Confirm' button on delete post confirmation view | Click on 'Confirm' button | The user is navigated to the Blog page. The post has been successfully deleted from the database and is no longer displayed. Only the post author can confirm deletion | ✅ |
 | Cancel post deletion | 'Cancel' button on delete post confirmation view | Click on 'Cancel' button | The user is navigated back to the post detail page. The post has not been deleted | ✅ |
-| **Comments section** |  |  |  |  |
+
+</details><br/>
+
+<details><summary><b>Comments section</b></summary>
+
+| **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
+| --- | --- | --- | --- | :---: |
 | View post comments | Comments section | Click on post card, scroll down to the comments section | The comments are displayed. Only approved comments are visible for all users. Not approved comments are visible to the comment author | ✅ |
 | 'Add Comment' link | 'Add Comment' button in comments section | Click on 'Add Comment' | The modal with form is displayed to the user. Only registered users have access to the button and form | ✅ |
 | 'Add Comment' Form validation | 'Add Comment' Form | Leave empty | The error message is displayed. The user is asked to fill in the empty field | ✅ |
@@ -269,7 +304,13 @@ Extensive manual testing was performed on the application. Each feature was veri
 | 'Delete' link | 'Delete' icon at top right corner of the comment | Click on 'Delete' icon on your comment | The user is navigated to the delete comment confirmation. Only the comment author has access to the button | ✅ |
 | Deletion confirmation | 'Confirm' button on delete comment confirmation view | Click on 'Confirm' button | The user is navigated to the Blog page. The comment has been successfully deleted from the database and is no longer displayed. Only the comment author can confirm deletion | ✅ |
 | Cancel comment deletion | 'Cancel' button on delete comment confirmation view | Click on 'Cancel' button | The user is navigated back to the post detail page. The comment has not been deleted | ✅ |
-| **Profile App** |  |  |  |  |
+
+</details><br/>
+
+<details><summary><b>Profile App</b></summary>
+
+| **Test Case** | **Element** | **Action** | **Success Criteria** | **Result** |
+| --- | --- | --- | --- | :---: |
 | View my profile | Profile page | Navigate through 'Profile' navigation item | The profile is displayed with picture, username, date joined, amount of posts and bio if available. Only registered users can view each other's profile | ✅ |
 | 'Edit' profile | 'Edit' button under the profile | Click on 'Edit' button under your profile | The modal is displayed with a form to update a profile picture and bio. The bio can be left blank. The avatar can be either changed or unchanged (the default image will be displayed). Only the profile's owner has access to the button and the form to edit it | ✅ |
 | 'Edit profile' Form action | 'Save changes' button in 'Edit profile' Form | After updating bio or changing the picture, click on 'Save changes' button under the form | The user is navigated to his profile. The profile has been successfully updated. Only the profile's owner can update his profile | ✅ |

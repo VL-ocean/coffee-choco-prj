@@ -326,8 +326,34 @@ The website is responsive to different layouts depending on the size of the view
 
 ### Existing Features
 
+#### Header
+#### Footer
+#### Home page
+#### Blog page
+#### Search results page
+#### Single Post page
+#### Add Post Form
+#### Edit Post Form
+#### Delete Post page
+#### Comments section
+#### Add Comment Form Modal
+#### Delete Comment page
+#### User Account pages
+#### Profile page
+#### Edit Profile Form
+#### Custom error pages
 
 ### Future Features
+
+- Reset Password functionality
+- Ability for the user to delete his profile along with the account
+- Edit Comment functionality
+- Add 'Saved posts' section. The user can store the posts he wants to read later, or favourite posts
+- Liking/unliking a post or comment
+- Follow another user to get notification when he posted something new
+- Add messenger, so that users can chat with each other
+- Star ranking on recipes
+- Solve the bug with CKE Editor
 
 
 ## Technologies Used
