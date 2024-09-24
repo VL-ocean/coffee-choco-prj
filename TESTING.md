@@ -154,19 +154,44 @@ The website was tested in the [Chrome Dev Tools](https://developer.chrome.com/do
 * Best Practices - checks whether the page is built on the modern standards of web development.
 * SEO - checks if the website is optimised for search engine result rankings.
 
-<details><summary><b>Test Results</b></summary>
+<details><summary><b>Desktop Test Results</b></summary>
 
 | **Page** | **Role** | **Result** |
 | --- | --- | --- |
-|  |  | **Desktop** |
-| Home | Visitor | ![Result](./README-images/) |
+| Home | Visitor | ![Result](./README-images/home-visitor-desktop.png) |
 | Home | Registered User | ![Result](./README-images/) |
-|  |  | **Mobile** |
-| Home | Visitor | ![Result](./README-images/) |
-| Home | Registered User | ![Result](./README-images/) |
+| Blog | Visitor | ![Result](./README-images/blog-visitor-desktop.png) |
+| Blog | Registered User | ![Result](./README-images/) |
+| Search results (Blog) | Visitor | ![Result](./README-images/search-visitor-desktop.png) |
+| Search results (Blog) | Registered User | ![Result](./README-images/) |
+| Post Detail | Visitor | ![Result](./README-images/post-visitor-desktop.png) |
+| Post Detail | Registered User | ![Result](./README-images/) |
+| Register | Visitor | ![Result](./README-images/register-visitor-desktop.png) |
+| Register | Registered User | ![Result](./README-images/) |
+| Login | Visitor | ![Result](./README-images/login-visitor-desktop.png) |
+| Login | Registered User | ![Result](./README-images/) |
 
+</details>
+
+<details><summary><b>Mobile Test Results</b></summary>
+
+| **Page** | **Role** | **Result** |
+| --- | --- | --- |
+| Home | Visitor | ![Result](./README-images/home-visitor-mobile.png) |
+| Home | Registered User | ![Result](./README-images/) |
+| Blog | Visitor | ![Result](./README-images/blog-visitor-mobile.png) |
+| Blog | Registered User | ![Result](./README-images/) |
+| Search results (Blog) | Visitor | ![Result](./README-images/search-visitor-mobile.png) |
+| Search results (Blog) | Registered User | ![Result](./README-images/) |
+| Post Detail | Visitor | ![Result](./README-images/post-visitor-mobile.png) |
+| Post Detail | Registered User | ![Result](./README-images/) |
+| Register | Visitor | ![Result](./README-images/register-visitor-mobile.png) |
+| Register | Registered User | ![Result](./README-images/) |
+| Login | Visitor | ![Result](./README-images/login-visitor-mobile.png) |
+| Login | Registered User | ![Result](./README-images/) |
 
 </details><br/>
+
 
 ## Manual Testing
 
