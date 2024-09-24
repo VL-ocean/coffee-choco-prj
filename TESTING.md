@@ -201,7 +201,15 @@ The website was tested in the [Chrome Dev Tools](https://developer.chrome.com/do
 
 ## Accessibility Testing
 
+Besides Lighthouse accessibility testing, the website was also tested using the [WAVE](https://wave.webaim.org/) tool. No errors identified. 
+Unfortunately, it cannot evaluate the website from the registered user's view, due to login issues. Heroku app refused to connect.
 
+| **Page** | **Notes** | **Result** |
+| --- | --- | --- |
+| Home | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-home.png)</details> |
+| Blog | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-blog.png)</details> |
+| Register | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-register.png)</details> |
+| Login | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-login.png)</details> |
 
 
 ## Manual Testing
