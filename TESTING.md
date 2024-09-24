@@ -1,23 +1,23 @@
 # Testing
 
-![Main Image]()
+![Main Image](./README-images/main-responsive.png)
 
 # Contents
 
 - [Responsiveness Tests](#responsiveness-tests)
+- [Browser Compatibility](#browser-compatibility)
 - [Code Validation](#code-validation)
   * [HTML](#html)
   * [CSS](#css)
   * [JavaScript](#javascript)
   * [Python](#python)
   * [Python (Unit Testing)](#python--unit-testing-)
-- [Manual Testing](#manual-testing)
-- [Role-based Restrictions](#role-based-restrictions)
-- [Bugs](#bugs)
-- [Browser Compatibility](#browser-compatibility)
-- [User Story Testing](#user-story-testing)
 - [Lighthouse Testing](#lighthouse-testing)
 - [Accessibility Testing](#accessibility-testing)
+- [Manual Testing](#manual-testing)
+- [Role-based Restrictions](#role-based-restrictions)
+- [User Story Testing](#user-story-testing)
+- [Bugs](#bugs)
 
 
 ## Responsiveness Tests
@@ -36,6 +36,18 @@ The mobile-first strategy was used when developing the website. The project has 
 | 1440 x 900  | Desktop | <details><summary>View</summary>![screenshot](./README-images/1440-sample.png)</details> | ✅ |
 | 1680 x 1050  | Desktop | <details><summary>View</summary>![screenshot](./README-images/1680-sample.png)</details> | ✅ |
 | 1920 x 1080  | Desktop | <details><summary>View</summary>![screenshot](./README-images/1920-sample.png)</details> | ✅ |
+
+
+## Browser Compatibility
+
+The deployed project was tested on the most popular browsers for compatibility issues.
+
+| Browser | Notes | Result |
+| --- | --- | --- |
+| Chrome | No issues identified | ✅ |
+| Opera | No issues identified | ✅ |
+| Firefox | No issues identified | ✅ |
+| Microsoft Edge | No issues identified | ✅ |
 
 
 ## Code Validation
@@ -112,7 +124,6 @@ The python files have all been passed through [CI Python Linter](https://pep8ci.
 | --- | --- | --- |
 |  |  | **Blog App** |
 | admin.py | ✅ | ![Result](./README-images/blog-admin-py.png) |
-| apps.py | ✅ | ![Result](./README-images/blog-apps-py.png) |
 | forms.py | ✅ | ![Result](./README-images/blog-forms-py.png) |
 | models.py | ✅ | ![Result](./README-images/blog-models-py.png) |
 | urls.py | ✅ | ![Result](./README-images/blog-urls-py.png) |
@@ -123,12 +134,10 @@ The python files have all been passed through [CI Python Linter](https://pep8ci.
 | urls.py | ✅ | ![Result](./README-images/main-urls-py.png) |
 | wsgi.py | ✅ | ![Result](./README-images/main-wsgi-py.png) |
 |  |  | **Home App** |
-| apps.py | ✅ | ![Result](./README-images/home-apps-py.png) |
 | urls.py | ✅ | ![Result](./README-images/home-urls-py.png) |
 | views.py | ✅ | ![Result](./README-images/home-views-py.png) |
 |  |  | **Profiles App** |
 | admin.py | ✅ | ![Result](./README-images/profiles-admin-py.png) |
-| apps.py | ✅ | ![Result](./README-images/profiles-apps-py.png) |
 | forms.py | ✅ | ![Result](./README-images/profiles-forms-py.png) |
 | models.py | ✅ | ![Result](./README-images/profiles-models-py.png) |
 | urls.py | ✅ | ![Result](./README-images/profiles-urls-py.png) |
@@ -136,6 +145,28 @@ The python files have all been passed through [CI Python Linter](https://pep8ci.
 
 </details><br/>
 
+## Lighthouse Testing
+
+The website was tested in the [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) using Lighthouse Testing tool which inspects and scores the website for the following criteria:
+
+* Performance - how quickly a website loads and how quickly users can access it.
+* Accessibility - test analyses how well people who use assistive technologies can use your website.
+* Best Practices - checks whether the page is built on the modern standards of web development.
+* SEO - checks if the website is optimised for search engine result rankings.
+
+<details><summary><b>Test Results</b></summary>
+
+| **Page** | **Role** | **Result** |
+| --- | --- | --- |
+|  |  | **Desktop** |
+| Home | Visitor | ![Result](./README-images/) |
+| Home | Registered User | ![Result](./README-images/) |
+|  |  | **Mobile** |
+| Home | Visitor | ![Result](./README-images/) |
+| Home | Registered User | ![Result](./README-images/) |
+
+
+</details><br/>
 
 ## Manual Testing
 
@@ -240,3 +271,9 @@ The user role based restrictions were tested to ensure that view and functionali
 
 
 ## Bugs
+
+| **Description** | **Solution** | **Status** | **Notes** |
+| --- | --- | --- | --- |
+| 'Profile' navigation item does not become active when the Profile page is opened | In header.html use 'request.resolver_match.url_name' to compare the opened url with the url name in [profiles/urls.py]. Once it matches, the active class is applied to the navigation item | ✅ | Resolved with git commit beb22da |
+| When searching a word that is not found in any blog posts, the posts.html renders the title 'Newst Posts' with no posts in it. It does not indicate that the match was not found | In posts.html added if statement to check whether 'posts' variable has anything inside. If it is empty, then the message 'No matching results' is displayed to the user | ✅ | Resolved with git commit beb22da |
+| 'Add Comment' Form can be submitted empty | In post_detail.html add 'required' attribute to the textarea of the comment body. So that the form cannot be submitted empty on the frontend | ✅ | Resolved with git commit ff9ee1b |
