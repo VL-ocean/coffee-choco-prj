@@ -72,7 +72,7 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Post
     form_class = PostForm
     success_url = "/blog/"
-    success_message = "The action performed successfully."
+    success_message = "The post has been created successfully."
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -88,7 +88,7 @@ class EditPost(
     model = Post
     form_class = PostForm
     success_url = "/blog/"
-    success_message = "The post updated successfully."
+    success_message = "The post has been updated successfully."
 
     def test_func(self):
         return self.request.user == self.get_object().user
@@ -101,7 +101,7 @@ class DeletePost(
 
     model = Post
     success_url = "/blog/"
-    success_message = "The post deleted successfully"
+    success_message = "The post has been deleted successfully"
 
     def test_func(self):
         return self.request.user == self.get_object().user
@@ -118,7 +118,7 @@ class AddComment(LoginRequiredMixin, SuccessMessageMixin, DetailView):
 
         comment_instance = Comment(body=body, user=user, post=post)
         comment_instance.save()
-        messages.success(request, "The comment created successfully!")
+        messages.success(request, "The comment has been created successfully!")
 
         return redirect(f"/blog/{post_id}")
 
@@ -133,7 +133,7 @@ class DeleteComment(
 
     model = Comment
     success_url = "/blog/"
-    success_message = "The comment deleted successfully"
+    success_message = "The comment has been deleted successfully"
 
     def test_func(self):
         return self.request.user == self.get_object().user

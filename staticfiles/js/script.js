@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Tooltip
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
 
 // Hide messages after 5 seconds 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const message = document.querySelector(".message-box");
         if (message) {
             message.style.display = "none";
-            clearInterval(waitingTime)
+            clearInterval(waitingTime);
         }
     }, 4000);
 });
