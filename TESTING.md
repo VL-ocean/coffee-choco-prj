@@ -159,17 +159,20 @@ The website was tested in the [Chrome Dev Tools](https://developer.chrome.com/do
 | **Page** | **Role** | **Result** |
 | --- | --- | --- |
 | Home | Visitor | ![Result](./README-images/home-visitor-desktop.png) |
-| Home | Registered User | ![Result](./README-images/) |
+| Home | Registered User | ![Result](./README-images/home-user-desktop.png) |
 | Blog | Visitor | ![Result](./README-images/blog-visitor-desktop.png) |
-| Blog | Registered User | ![Result](./README-images/) |
+| Blog | Registered User | ![Result](./README-images/blog-user-desktop.png) |
 | Search results (Blog) | Visitor | ![Result](./README-images/search-visitor-desktop.png) |
-| Search results (Blog) | Registered User | ![Result](./README-images/) |
+| Search results (Blog) | Registered User | ![Result](./README-images/search-user-desktop.png) |
 | Post Detail | Visitor | ![Result](./README-images/post-visitor-desktop.png) |
-| Post Detail | Registered User | ![Result](./README-images/) |
+| Post Detail | Registered User | ![Result](./README-images/post-user-desktop.png) |
+| Add Post | Registered User | ![Result](./README-images/add-post-user-desktop.png) |
+| Edit Post | Registered User | ![Result](./README-images/edit-post-user-desktop.png) |
+| Delete Post | Registered User | ![Result](./README-images/delete-post-user-desktop.png) |
 | Register | Visitor | ![Result](./README-images/register-visitor-desktop.png) |
-| Register | Registered User | ![Result](./README-images/) |
+| Profile | Registered User | ![Result](./README-images/profile-user-desktop.png) |
 | Login | Visitor | ![Result](./README-images/login-visitor-desktop.png) |
-| Login | Registered User | ![Result](./README-images/) |
+| Logout | Registered User | ![Result](./README-images/logout-user-desktop.png) |
 
 </details>
 
@@ -178,19 +181,27 @@ The website was tested in the [Chrome Dev Tools](https://developer.chrome.com/do
 | **Page** | **Role** | **Result** |
 | --- | --- | --- |
 | Home | Visitor | ![Result](./README-images/home-visitor-mobile.png) |
-| Home | Registered User | ![Result](./README-images/) |
+| Home | Registered User | ![Result](./README-images/home-user-mobile.png) |
 | Blog | Visitor | ![Result](./README-images/blog-visitor-mobile.png) |
-| Blog | Registered User | ![Result](./README-images/) |
+| Blog | Registered User | ![Result](./README-images/blog-user-mobile.png) |
 | Search results (Blog) | Visitor | ![Result](./README-images/search-visitor-mobile.png) |
-| Search results (Blog) | Registered User | ![Result](./README-images/) |
+| Search results (Blog) | Registered User | ![Result](./README-images/search-user-mobile.png) |
 | Post Detail | Visitor | ![Result](./README-images/post-visitor-mobile.png) |
-| Post Detail | Registered User | ![Result](./README-images/) |
+| Post Detail | Registered User | ![Result](./README-images/post-user-mobile.png) |
+| Add Post | Registered User | ![Result](./README-images/add-post-user-mobile.png) |
+| Edit Post | Registered User | ![Result](./README-images/edit-post-user-mobile.png) |
+| Delete Post | Registered User | ![Result](./README-images/delete-post-user-mobile.png) |
 | Register | Visitor | ![Result](./README-images/register-visitor-mobile.png) |
-| Register | Registered User | ![Result](./README-images/) |
+| Profile | Registered User | ![Result](./README-images/profile-user-mobile.png) |
 | Login | Visitor | ![Result](./README-images/login-visitor-mobile.png) |
-| Login | Registered User | ![Result](./README-images/) |
+| Logout | Registered User | ![Result](./README-images/logout-user-mobile.png) |
 
 </details><br/>
+
+
+## Accessibility Testing
+
+
 
 
 ## Manual Testing
@@ -295,6 +306,11 @@ The user role based restrictions were tested to ensure that view and functionali
 | No access to view another user's profile | ✅ |
 
 
+## User Story Testing
+
+
+
+
 ## Bugs
 
 | **Description** | **Solution** | **Status** | **Notes** |
@@ -302,3 +318,5 @@ The user role based restrictions were tested to ensure that view and functionali
 | 'Profile' navigation item does not become active when the Profile page is opened | In header.html use 'request.resolver_match.url_name' to compare the opened url with the url name in [profiles/urls.py]. Once it matches, the active class is applied to the navigation item | ✅ | Resolved with git commit beb22da |
 | When searching a word that is not found in any blog posts, the posts.html renders the title 'Newst Posts' with no posts in it. It does not indicate that the match was not found | In posts.html added if statement to check whether 'posts' variable has anything inside. If it is empty, then the message 'No matching results' is displayed to the user | ✅ | Resolved with git commit beb22da |
 | 'Add Comment' Form can be submitted empty | In post_detail.html add 'required' attribute to the textarea of the comment body. So that the form cannot be submitted empty on the frontend | ✅ | Resolved with git commit ff9ee1b |
+| Console error displayed by CKE Editor. Due to it being no longer supported by the developers |The solution is to buy and use their secured and supported 5-th version of the Editor. Or replace it with another free editor | ❌ | Due to resolve in future fixes |
+| Modal popup displayed by CKE Editor in the forms where the widget was used. Due to it being no longer supported by the developers |The solution is to buy and use their secured and supported 5-th version of the Editor. Or replace it with another free editor | ✅ | Temporary fix by setting display to none using custom JavaScript |
