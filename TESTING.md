@@ -208,6 +208,7 @@ Unfortunately, it cannot evaluate the website from the registered user's view, d
 | --- | --- | --- |
 | Home | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-home.png)</details> |
 | Blog | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-blog.png)</details> |
+| Post detail | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-post.png)</details> |
 | Register | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-register.png)</details> |
 | Login | No errors were detected | <details><summary>View</summary>![result](./README-images/wave-login.png)</details> |
 
