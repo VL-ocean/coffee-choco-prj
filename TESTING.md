@@ -65,7 +65,6 @@ The process of HTML file validation by direct input:
 Notes:
 - The source code for validation has been copied from the deployed version of the website, using "View source code" option.
 - Every page extends from base.html and includes header.html and footer.html
-- The 403.html page has not been checked, since the user is right away redirected to the Login page.
 
 
 <details>
@@ -91,6 +90,7 @@ Notes:
 | logout.html | ✅ | No errors or warnings to show | ![logout](./README-images/logout-html-validation.png) |
 | signup.html | ✅ | No errors or warnings to show | ![signup](./README-images/signup-html-validation.png) |
 | **Error templates** |  |  |  |
+| 403.html | ✅ | No errors or warnings to show | ![403](./README-images/403-page-html.png) |
 | 404.html | ✅ | No errors or warnings to show | ![404](./README-images/404-page-html-validation.png) |
 | 500.html | ✅ | No errors or warnings to show | ![500](./README-images/500-page-html-validation.png) |
 
@@ -414,4 +414,5 @@ The user role based restrictions were tested to ensure that view and functionali
 | When searching a word that is not found in any blog posts, the posts.html renders the title 'Newst Posts' with no posts in it. It does not indicate that the match was not found | In posts.html added if statement to check whether 'posts' variable has anything inside. If it is empty, then the message 'No matching results' is displayed to the user | ✅ | Resolved with git commit beb22da |
 | 'Add Comment' Form can be submitted empty | In post_detail.html add 'required' attribute to the textarea of the comment body. So that the form cannot be submitted empty on the frontend | ✅ | Resolved with git commit ff9ee1b |
 | Console error displayed by CKE Editor. Due to it being no longer supported by the developers |The solution is to buy and use their secured and supported 5-th version of the Editor. Or replace it with another free editor | ❌ | Due to resolve in future fixes |
-| Modal popup displayed by CKE Editor in the forms where the widget was used. Due to it being no longer supported by the developers |The solution is to buy and use their secured and supported 5-th version of the Editor. Or replace it with another free editor | ✅ | Temporary fix by setting display to none using custom JavaScript |
+| Modal popup displayed by CKE Editor in the forms where the widget was used. Due to it being no longer supported by the developers | The solution is to buy and use their secured and supported 5-th version of the Editor. Or replace it with another free editor | ✅ | Temporary fix by setting display to none using custom JavaScript |
+| The if statement for `updated` date in post_detail.html does not work as intended. It is supposed to be displayed only if the post has been updated after creation. However it is displayed despite the statement. The post approvement is currently considered as update too, which should not be the case | The solution is to redo the logic. Perhaps move the `approved` status to a separate database table | ❌ | Due to resolve in future fixes |

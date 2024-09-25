@@ -30,7 +30,22 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
     - [Form Validation](#form-validation)
     - [Database Security](#database-security)
   - [Features](#features)
-    - [Existing Features](#existing-features)
+    - [Header](#header)
+    - [Footer](#footer)
+    - [Blog page](#blog-page)
+    - [Search results page](#search-results-page)
+    - [Single Post page](#single-post-page)
+    - [Add Post Form](#add-post-form)
+    - [Edit Post Form](#edit-post-form)
+    - [Delete Post page](#delete-post-page)
+    - [Comments section](#comments-section)
+    - [Add Comment Form Modal](#add-comment-form-modal)
+    - [Delete Comment page](#delete-comment-page)
+    - [User Account pages](#user-account-pages)
+    - [Profile page](#profile-page)
+    - [Edit Profile Form](#edit-profile-form)
+    - [Messages](#messages)
+    - [Custom error pages](#custom-error-pages)
     - [Future Features](#future-features)
   - [Technologies Used](#technologies-used)
     - [Coding languages used](#coding-languages-used)
@@ -41,9 +56,9 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
     - [To fork the project](#to-fork-the-project)
     - [To clone the project](#to-clone-the-project)
   - [Credits](#credits)
-    - [Colour Theme](#colour-theme)
-    - [Project](#project)
+    - [Project Inspiration](#project)
     - [Articles and Recipes](#articles--recipes)
+    - [Colour Theme](#colour-theme)
     - [Media](#media)
     - [Tools](#tools)
   - [Acknowledgements](#acknowledgements)
@@ -324,24 +339,205 @@ The website is responsive to different layouts depending on the size of the view
 
 ## Features
 
-### Existing Features
+### Header
 
-#### Header
-#### Footer
-#### Home page
-#### Blog page
-#### Search results page
-#### Single Post page
-#### Add Post Form
-#### Edit Post Form
-#### Delete Post page
-#### Comments section
-#### Add Comment Form Modal
-#### Delete Comment page
-#### User Account pages
-#### Profile page
-#### Edit Profile Form
-#### Custom error pages
+*Visitor view*
+
+![Visitor view](./README-images/header-ft-visitor.png)
+
+*User View*
+
+![User view](./README-images/header-ft-user.png)
+
+The header is designed to be visually appealing and user-friendly, featuring a prominent logo, a navigation menu, user authentication links, and a search bar. It uses a cohesive color scheme with primary, secondary, and background colors, and ensures accessibility with good color contrast and ARIA labels. The responsive design adapts well to both desktop and mobile devices, maintaining functionality and ease of navigation across all screen sizes. The use of 'Roboto' font and consistent font sizes enhances readability, contributing to a seamless user experience. Once the user is logged in more options become available. For authorised users, 'Add Post' and 'Profile pages are available. 
+
+### Footer
+
+![Footer](./README-images/footer-ft.png)
+
+The footer maintains consistency with the overall site design, featuring the same font and color scheme, and is fully responsive to adapt to various screen sizes. Social links open in a separate tab, which enhances the user experience. 
+
+### Home page
+
+*Hero image*
+
+![Hero image](./README-images/hero-image-ft.png)
+
+*Latest Posts*
+
+![Latest Posts](./README-images/header-ft-user.png)
+
+Includes hero page with welcome text, explaining the website goal and use. The 'Latest posts' section encourages the user to access the content right away.
+
+### Blog page
+
+![Blog](./README-images/blog-ft.png)
+
+The page presents users with the main content, organised by date, from newest to oldest posts. Pagination makes it easy to navigate through all the content, saving the user from having to scroll a lot. Consistent card containers allow the user to read the most important information about a post so they can decide if they are interested in viewing that post. Clicking on a card opens the post page, making it easy to navigate to the post.
+
+### Search results page
+
+*Searching word `cake`*
+
+![screenshot](./README-images/search-ft.png)
+
+The blog page turns into a search results page. It shows matching posts, ordered by date, from newest to oldest. If nothing is found, a message is displayed.
+
+*Searching word `strawberry`*
+
+![screenshot](./README-images/search-empty-ft.png)
+
+### Single Post page
+
+![post](./README-images/single-post-ft.png)
+
+The page includes the post image and content. The comments section is displayed under the post content. In case no comment are present, a message is displayed. The registered users have access to the `Add Comment` button.
+
+![screenshot](./README-images/single-post-comments-ft.png)
+
+### Add Post Form
+
+![form](./README-images/add-post-form-ft.png)
+
+Only registered users have access to the form. Form validation does not allow you to create a post with empty fields. The post can be saved as a draft or ready for publication. The corresponding message is displayed to the user once the post has been saved.
+
+### Edit Post Form
+
+![form](./README-images/edit-post-ft.png)
+
+The `Edit` button is available below the post in the post details view. Only the author of the post has access to the button and the form. After clicking on the `Edit post` button, the post will be immediately updated. The corresponding message is displayed to the user once the post has been updated.
+
+### Delete Post page
+
+![form](./README-images/post-delete-ft.png)
+
+The `Delete` button is available below the post in the post details view. Only the author of the post has access to the button and the confirmation page. Once the `Confirm` button is clicked, the post will be deleted immediately. The corresponding message is displayed to the user. Clicking on `Cancel` takes the user back to the post page.
+
+### Comments section
+
+*Comments available*
+
+![with comments](./README-images/comments-ft.png)
+
+*No comments*
+
+![no comments](./README-images/no-comments-ft.png)
+
+The comments are designed in small card-like containers that separate each comment to make them easier to read. Only registered users have access to `Add comment` button. The comment author has access to delete icon.  
+
+### Add Comment Form Modal
+
+*Add comment form*
+
+![screenshot](./README-images/comment-form-ft.png)
+
+Once `Add comment` button is clicked, the modal is displayed. The autofocus enchaces user experience, as the textarea is ready for typing right away. The user can write the comment and save it. The corresponding message will be displayed to the user, confirming that the comment has been saved. Each new comment is awaiting the admin approval. A message is displayed to the comment author. The grey background is indicating that the comment is visible only to the comment author.
+
+*Comment awaiting approval*
+
+![screenshot](./README-images/awaiting-comment-ft.png)
+
+### Delete Comment page
+
+The author of the comment has access to the delete icon. Clicking on it takes the user to the confirmation page. If the user clicks on `Confirm`, the comment will be deleted immediately. A message confirms to the user that the comment has been deleted. Clicking on `Cancel` takes the user back to the post page.
+
+![screenshot](./README-images/delete-comment-ft.png)
+
+### User Account pages
+
+*Register*
+
+![screenshot](./README-images/register-ft.png)
+
+The Register page contains a registration form. Once everything is entered correctly and the `Sign In` button is clicked
+
+*Login*
+
+![screenshot](./README-images/login-ft.png)
+
+The Login page contains a form asking for a username and password. Once everything is entered correctly and the `Sign Up` button is clicked, the user is informed about successfull registration. The user is now able to log in.
+
+*Logout*
+
+![screenshot](./README-images/logout-ft.png)
+
+On the `Sign Out` page, the user confirms their desire to sign out of the account. After clicking on the `Sign Out` button, the user will be logged out. The user will be shown an appropriate message indicating that the action was successful, as well as a permanent `You are not logged in` message.
+
+### Profile page
+
+![screenshot](./README-images/profile-ft.png)
+
+The Profile page displays the user avatar and info. Below the profile card, the posts are located. When shared the link with other registered users, they can view the profile too. 
+
+### Edit Profile Form
+
+![screenshot](./README-images/profile-edit-ft.png)
+
+`Edit` button is available only to the profile owner. The modal window provides a form to change the photo or bio. Bio can be left blank. If clicked on `Close`, the changes will not be applied. If clicked on `Save changes`, the profile will be updated. The user will be shown a message confirming that the action was successful.
+
+### Messages
+
+Upon successful completion of the action, the user receives a confirmation message.
+
+*Permanent message to site visitors*
+
+![message](./README-images/visitor-message.png)
+
+*The user has logged in*
+
+![message](./README-images/logged-in-message.png)
+
+*The user has signed out*
+
+![message](./README-images/signed-out-message.png)
+
+*The registration was successfull and the user is logged in*
+
+![message](./README-images/register-message.png)
+
+*The post has been created*
+
+![message](./README-images/create-post-message.png)
+
+*The post has been updated*
+
+![message](./README-images/update-post-message.png)
+
+*The post has been deleted*
+
+![message](./README-images/delete-post-message.png)
+
+*The comment has been created*
+
+![message](./README-images/create-comment-message.png)
+
+*The comment has been deleted*
+
+![message](./README-images/delete-comment-message.png)
+
+*The profile has been updated*
+
+![message](./README-images/update-profile-message.png)
+
+### Custom error pages
+
+*403 error*
+
+![screenshot](./README-images/403-page-ft.png)
+
+If registered user tries to access url to edit another user's post, the 403 error page is displayed.
+
+*404 error*
+
+![screenshot](./README-images/404-page-ft.png)
+
+If user tries to visit a non-existent page, the 404 error page is displayed.
+
+*500 error*
+
+![screenshot](./README-images/500-page-ft.png)
+
+If unregistered user tries to visit another user's profile, the 500 error page is displayed.
 
 ### Future Features
 
@@ -354,6 +550,8 @@ The website is responsive to different layouts depending on the size of the view
 - Add messenger, so that users can chat with each other
 - Star ranking on recipes
 - Solve the bug with CKE Editor
+- Add category and type to the search filter (Coffee/Chocolate, Recipe/Article)
+- Add link to user's profile when clicking on post author or comment author, so that another user can see all his posts and profile
 
 
 ## Technologies Used
@@ -480,13 +678,11 @@ Forking the **GitHub** repository allows you to create a duplicate of a local re
 
 ## Credits
 
-### Colour Theme
-
-- [Brown coffee chocolate beige theme by Elisa Cazzulo](https://color.adobe.com/de09e28a57de007f885d0c16d3e3-color-theme-12966174/)
-
-### Project
+### Project Inspiration
 
 - [Blossom-Therapy-Insights blog](https://github.com/Indre-V/blossom-therapy)
+- [Django Recipe Sharing Tutorial - Part 1](https://youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&si=we9i4N34LWePyGJP)
+- [Django Recipe Sharing Tutorial - Part 2](https://youtube.com/playlist?list=PLXuTq6OsqZjYSa-lrjd5wMGl23zpnhvln&si=qRpKuhzSGnPKq_9A)
 
 ### Articles & Recipes
 
@@ -501,6 +697,10 @@ Forking the **GitHub** repository allows you to create a duplicate of a local re
 - [Coffee and Your Health: The Good and the Bad By Leo Bear-McGuinness](https://www.technologynetworks.com/applied-sciences/articles/coffee-and-your-health-the-good-and-the-bad-384404)
 - [Brookies Recipe from Good Food magazine, Christmas 2020](https://www.bbcgoodfood.com/recipes/brookies)
 - [What Makes Coffee Organic](https://coffee.org/blogs/news/what-makes-coffee-organic-1)
+
+### Colour Theme
+
+- [Brown coffee chocolate beige theme by Elisa Cazzulo](https://color.adobe.com/de09e28a57de007f885d0c16d3e3-color-theme-12966174/)
 
 ### Media
 
