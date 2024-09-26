@@ -17,6 +17,7 @@ Coffee & Chocolate blog is a blog style website for those who love coffee and ch
     - [Target Audience](#target-audience)
     - [User Goals](#user-goals)
     - [Agile Development Tool](#agile-development-tool)
+    - [EPICs](#epics)
     - [User Stories](#user-stories)
   - [UX design](#ux-design)
     - [Wireframe](#wireframe)
@@ -168,6 +169,57 @@ Using GitHub Projects, tasks are managed and progress tracked through project bo
 <b>Issue Sample</b>
 <img src="./README-images/issue-sample-iter-2.png">
 </details>
+
+### EPICs
+
+Epic is a large body of work that is broken down into user stories. Each Epic in this project represents a key aspect of the platform's development and ensures comprehensive coverage of the required functionalities.
+
+**EPIC 1: Design Planning**
+- [USER STORY: Agile Methodology](https://github.com/VL-ocean/coffee-choco-prj/issues/36)
+- [USER STORY: Design Database Schema](https://github.com/VL-ocean/coffee-choco-prj/issues/37)
+- [USER STORY: Design](https://github.com/VL-ocean/coffee-choco-prj/issues/39)
+- [USER STORY: Create wireframes](https://github.com/VL-ocean/coffee-choco-prj/issues/38)
+
+Summary: Design and Planning covers the user experience design process
+
+**EPIC 2: Development Environment Setup**
+- [USER STORY: Create Django Project](https://github.com/VL-ocean/coffee-choco-prj/issues/40)
+- [USER STORY: Initial Deployment to Heroku](https://github.com/VL-ocean/coffee-choco-prj/issues/41)
+
+Summary: Set up Django development environment. The directory structure customized based preferences and project needs.
+
+**EPIC 3: User Account Management**
+- [USER STORY: Sign Up feature](https://github.com/VL-ocean/coffee-choco-prj/issues/5)
+- [USER STORY: Login and Logout Features](https://github.com/VL-ocean/coffee-choco-prj/issues/6)
+
+Summary: It encompasses user-related functionalities focusing on managing user accounts effectively within the system.
+
+**EPIC 4: User Engagement**
+- [USER STORY: Create a recipe/article](https://github.com/VL-ocean/coffee-choco-prj/issues/18)
+- [USER STORY: Update my recipe/article](https://github.com/VL-ocean/coffee-choco-prj/issues/19)
+- [USER STORY: Delete my recipe/article](https://github.com/VL-ocean/coffee-choco-prj/issues/21)
+- [USER STORY: View my posts in my profile](https://github.com/VL-ocean/coffee-choco-prj/issues/28)
+- [USER STORY: Fill out / Update profile info](https://github.com/VL-ocean/coffee-choco-prj/issues/25)
+- [USER STORY: Add comment](https://github.com/VL-ocean/coffee-choco-prj/issues/13)
+- [USER STORY: Delete comment](https://github.com/VL-ocean/coffee-choco-prj/issues/16)
+
+Summary: Registered user content management.
+
+**EPIC 5: Admin Content Management**
+- [USER STORY: Manage posts in admin panel](https://github.com/VL-ocean/coffee-choco-prj/issues/31)
+- [USER STORY: Admin can delete user and their profile](https://github.com/VL-ocean/coffee-choco-prj/issues/34)
+
+Summary: The goal is to streamline the process of content creation, editing, approval, and publication, allowing administrators to efficiently manage the blog's content.
+
+**EPIC 6: Quality Assurance and Documentation**
+- [USER STORY: Performance Optimization](https://github.com/VL-ocean/coffee-choco-prj/issues/42)
+- [USER STORY: Code Validation](https://github.com/VL-ocean/coffee-choco-prj/issues/43)
+- [USER STORY: Performance and Accessibility Testing](https://github.com/VL-ocean/coffee-choco-prj/issues/44)
+- [USER STORY: User Story Testing](https://github.com/VL-ocean/coffee-choco-prj/issues/46)
+- [USER STORY: Final Heroku Deployment](https://github.com/VL-ocean/coffee-choco-prj/issues/45)
+- [USER STORY: Comprehensive Project Documentation](https://github.com/VL-ocean/coffee-choco-prj/issues/47)
+
+Summary: Testing and validation are necessary to ensure the quality and reliability of the project.
 
 ### User Stories
 

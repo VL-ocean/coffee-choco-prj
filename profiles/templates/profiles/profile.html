@@ -8,6 +8,7 @@
 
 <div class="container p-4">
     <div class="profile d-flex flex-column justify-content-center">
+        <!-- Profile section -->
         <div class="info d-flex flex-column flex-md-row justify-content-start m-2">
             <div class="profile-image mx-3 align-self-center">
                 <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image"
@@ -24,11 +25,12 @@
         </div>
         <div class="container-fluid text-center">
             {% if request.user == profile.user %}
-            <!-- Button trigger modal -->
+            <!-- Button trigger Edit Profile modal -->
             <button id="myBtn" class="btn btn-light btn-outline-dark w-25 m-2" data-bs-toggle="modal"
                 data-bs-target="#myModal">Edit</button>
             {% endif %}
         </div>
+        <!-- Posts section -->
         <div class="profile-posts w-100">
             <h2 class="text-center py-4">Posts</h2>
             <div class="container-fluid">
@@ -37,14 +39,17 @@
                 d-block{% elif not post.approved %}d-none{% endif %}" aria-label="Click to view {{post.title}}">
                     <div class="card bg-black opacity-75 mb-3 text-white">
                         {% if post.status == 1 and not post.approved and post.user == user %}
+                        <!-- Approval message -->
                         <div class="card-header text-center bg-white">
                             <small class="text-black">The post is awaiting approval</small>
                         </div>
                         {% elif post.status == 0 and post.user == user %}
+                        <!-- Draft message -->
                         <div class="card-header text-center bg-white">
                             <small class="text-black">This is a draft</small>
                         </div>
                         {% endif %}
+                        <!-- Post card -->
                         <div class="card-body">
                             <h3 class="card-title">{{post.title}}</h3>
                             <hr>
@@ -54,6 +59,7 @@
                     </div>
                 </a>
                 {% empty %}
+                <!-- Message if no posts -->
                 <div class="text-center p-3 m-2 bg-light rounded justify-content-center align-content-center">
                     <p class="text-body-secondary m-0">No posts yet</p>
                 </div>
@@ -70,6 +76,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <!-- Edit Profile form -->
                     <form method="POST" action="{% url 'edit_profile' request.user.id %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form|crispy }}

@@ -8,11 +8,13 @@
 
 <div class="container">
     <div class="card p-3 my-3">
+        <!-- Message about approval -->
         {% if not post.approved and post.user == user %}
         <div class="card-body text-end">
             <small class="text-end text-body-secondary">The post is awaiting approval</small>
         </div>
         {% endif %}
+        <!-- Post body -->
         <div class="row g-0">
             <div class="col-md-4 text-center">
                 <img src="{{ post.image.url }}" class="img-fluid rounded" alt="{{ post.image_alt }}">
@@ -41,6 +43,7 @@
             </div>
         </div>
     </div>
+    <!-- Control buttons for post author -->
     {% if request.user == post.user %}
     <div class="text-center">
         <a href="{% url 'edit_post' post.id %}" class="btn btn-light btn-outline-dark w-25 mb-2">Edit</a>
@@ -48,10 +51,11 @@
     </div>
     {% endif %}
     <div class="my-3">
+        <!-- Comments section -->
         <div class="d-flex flex-row justify-content-between">
             <h2 class="ms-3 p-2 d-block">Comments...</h2>
             {% if user.is_authenticated %}
-            <!-- Button trigger modal -->
+            <!-- Button trigger for comment modal -->
             <button id="myBtn" class="btn btn-light btn-outline-dark m-2 h-75 align-self-center" data-bs-toggle="modal"
                 data-bs-target="#myCommentModal">Add comment</button>
             {% endif %}
@@ -79,6 +83,7 @@
                 {% endif %}
             </div>
             {% empty %}
+            <!-- Message if no comments -->
             <div class="text-center p-3 m-2 bg-light rounded justify-content-center align-content-center">
                 <p class="text-body-secondary m-0">No comments yet</p>
             </div>
@@ -94,6 +99,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <!-- Add Comment Form -->
                     <form method="POST" action="{% url 'add_comment' %}">
                         {% csrf_token %}
                         <input type="hidden" name="post_id" value="{{ post.id }}">

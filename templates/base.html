@@ -36,6 +36,7 @@
     {% include 'includes/header.html' %}
 
     <main>
+        <!-- Messages -->
         {% if messages %}
             {% for message in messages %}
                 <div class="alert alert-success text-center message-box" role="alert">
@@ -43,7 +44,8 @@
                 </div>
             {% endfor %}
         {% endif %}
-
+        
+        <!-- User not logged in -->
         {% if not user.is_authenticated %}
         <div class="alert alert-secondary text-center" role="alert">
             <p class="mb-0">You are not logged in</p>
